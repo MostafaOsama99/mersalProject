@@ -45,7 +45,7 @@ class PatientExtract extends StatelessWidget {
     final double textWidth = width * 0.60 - 16;
     // TODO: implement build
     return Container(
-      width: 300,height: 330,
+      width: 300, height: 330,
       child: ProjectDonation(
         image: 'Images/talkkkkkkk.jpg',
         text: 'Communication',

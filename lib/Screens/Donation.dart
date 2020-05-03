@@ -96,67 +96,61 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.all(12),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.only(right: 20, left: 20, bottom: 20, top: 0),
-                child: Column(
+          child: Padding(
+            padding: const EdgeInsets.only( bottom: 20, top: 0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Center(
-                            child: new Image.asset(
-                              'Images/donatee.png',
-                              width: 25,
-                              height: 25,
-                            )),
-                        SizedBox(width: 5),
-                        Text(
-                          "Donate",
-                          style: TextStyle(color: Colors.teal, fontSize: 45),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 35 ),
-                      child: Divider(
-                        height: 20,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20, bottom: 15),
-                      child: SafeArea(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            item(
-                                id: 0,
-                                text: "SMS",
-                                image: "Images/sms.png",
-                                data: smsData()),
-                            item(
-                                id: 1,
-                                text: "Credit Card",
-                                image: "Images/credit-card.png",
-                                data: creditCardData()),
-                            item(
-                                id: 2,
-                                text: "Request \nan agent",
-                                image: "Images/mandob.png",
-                                data: agentData()),
-                          ],
-                        ),
-                      ),
+                    Center(
+                        child: new Image.asset(
+                          'Images/donatee.png',
+                          width: 25,
+                          height: 25,
+                        )),
+                    SizedBox(width: 5),
+                    Text(
+                      "Donate",
+                      style: const TextStyle(color: Colors.teal, fontSize: 45),
                     ),
                   ],
                 ),
-              ),
-              Container(
-                child: content,
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 35 ),
+                  child: Divider(
+                    height: 20,
+                    color: Colors.grey,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 15),
+                  child: SafeArea(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        item(
+                            id: 0,
+                            text: "SMS",
+                            image: "Images/sms.png",
+                            data: smsData()),
+                        item(
+                            id: 1,
+                            text: "Credit Card",
+                            image: "Images/credit-card.png",
+                            data: creditCardData()),
+                        item(
+                            id: 2,
+                            text: "Request \nan agent",
+                            image: "Images/mandob.png",
+                            data: agentData()),
+                      ],
+                    ),
+                  ),
+                ),
+                content
+              ],
+            ),
           ),
         ),
       ),
@@ -244,7 +238,7 @@ class _HomeState extends State<Home> {
                 )
               ],
             )),
-        DonateButton(),
+        DonateButton((){}),
       ],
     );
   }
@@ -300,7 +294,7 @@ class _HomeState extends State<Home> {
             )),
 
         //TODO: change flatButton to MaterialButton to match splash animation to child
-        DonateButton(),
+        DonateButton((){}),
 
       ],
     );
@@ -324,10 +318,9 @@ class _HomeState extends State<Home> {
         ),
 
 
-        FlatButton( onPressed: (){
+        DonateButton( (){
           return modal1.mainBottomSheet(context);
-        },
-            child: DonateButton()),
+        }),
       ],
     );
   }
@@ -398,6 +391,9 @@ class DonationService extends StatelessWidget {
 
 
 class DonateButton extends StatelessWidget {
+  final Function onPressed ;
+
+  const DonateButton( this.onPressed) ;
 
 
   @override
@@ -407,6 +403,7 @@ class DonateButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top:12),
       child: FlatButton(
+        onPressed: onPressed,
         padding: const EdgeInsets.all(0),
 
         child: Container(
@@ -414,7 +411,6 @@ class DonateButton extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: Color(0xffF51546),
-            border: Border.all(color: Colors.white),
             borderRadius: BorderRadius.circular(50),
           ),
           child: Row(

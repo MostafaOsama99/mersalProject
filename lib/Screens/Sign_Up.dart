@@ -116,8 +116,9 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.all(0),
                 onPressed: () {
                   if(_formKey.currentState.validate()) {
+                    Navigator.pushNamed(context, 'Mersal Home');
                     //   register(_registerData);
-                    print(_registerData);
+                    //print(_registerData);
                     //TODO: implement sign up and wrap the validation in if condition
                   }
                 },

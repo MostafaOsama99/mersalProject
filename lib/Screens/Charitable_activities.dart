@@ -104,7 +104,6 @@ class CharitableExtract extends StatelessWidget {
             width: 130,
             height: 30,
             decoration: BoxDecoration(
-                border: new Border.all(color: Colors.white),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(4),
                     bottomRight: Radius.circular(4)),

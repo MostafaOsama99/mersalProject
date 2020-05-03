@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Urgent_Cases.dart';
 import 'Mersal_Home.dart';
@@ -108,14 +109,17 @@ class NavigationTile extends StatelessWidget {
                 Center(
                     child: Image.asset(
                       '$image',
-                      width: 38,
-                      height: 38,
+                      width: 35,
+                      height: 35,
                     )),
                 SizedBox(width: 20),
-                Text(text,
-                    style: const TextStyle(
-                        fontSize: 22, fontWeight: FontWeight.normal),
-                    textAlign: TextAlign.start),
+                FittedBox(
+                  //fit: BoxFit.,
+                  child: Text(text,
+                      style: const TextStyle(
+                          fontSize: 22, fontWeight: FontWeight.normal),
+                      textAlign: TextAlign.start),
+                ),
               ],
             ),
             Padding(

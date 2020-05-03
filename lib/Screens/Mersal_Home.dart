@@ -35,6 +35,8 @@ class Mesralhomepage extends State<MersalHome> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     // TODO: implement build
+
+
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60),
@@ -51,10 +53,12 @@ class Mesralhomepage extends State<MersalHome> {
             backgroundColor: Colors.white,
           ),
         ),
+
         drawer: Container(
-          width: 350,
+          width: MediaQuery.of(context).size.width * 0.75,
           child: Drawer(child: ListExtract()),
         ),
+
         body: ListView(
           children: <Widget>[
             SizedBox(
@@ -101,6 +105,7 @@ class Mesralhomepage extends State<MersalHome> {
                 ),
               ],
             ),
+
             AspectRatio(
               aspectRatio: 10 / 4,
               child: ListView(
@@ -165,15 +170,25 @@ class Mesralhomepage extends State<MersalHome> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 3 / 4,
-                    child: ProjectDonation(
-                      image: 'Images/talkkkkkkk.jpg',
-                      text: 'Communication',
-                      percentageNum: '£20000/£30000',
-                      percentage: '66%',
-                    ),
+                  ProjectDonation(
+                    image: 'Images/talkkkkkkk.jpg',
+                    text: 'Communication',
+                    percentageNum: '£20000/£30000',
+                    percentage: '66%',
                   ),
+                  ProjectDonation(
+                    image: 'Images/blanket.jpg',
+                    text: 'help with Blanket',
+                    percentageNum: '£20000/£30000',
+                    percentage: '66%',
+                  ),
+                  ProjectDonation(
+                    image: 'Images/talkkkkkkk.jpg',
+                    text: 'Help poor people',
+                    percentageNum: '£20000/£30000',
+                    percentage: '66%',
+                  ),
+
                 ],
               ),
             ),
@@ -363,139 +378,6 @@ class Mesralhomepage extends State<MersalHome> {
   }
 }
 
-//class ProjectDonation extends StatelessWidget {
-//  ProjectDonation({this.image, this.text, this.percentageNum, this.percentage});
-//
-//  final String image, text, percentageNum, percentage;
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    // TODO: implement build
-//    return Padding(
-//      padding: EdgeInsets.all(8),
-//      child: Container(
-//        decoration: new BoxDecoration(
-//          boxShadow: [
-//            BoxShadow(
-//              color: Colors.grey,
-//              blurRadius: 1,
-//              // has the effect of softening the shadow
-//              spreadRadius: 0,
-//              // has the effect of extending the shadow
-//              offset: Offset(
-//                1.0, // horizontal, move right 10
-//                1.0, // vertical, move down 10
-//              ),
-//            )
-//          ],
-//          color: Colors.white,
-//          border: new Border.all(color: Colors.white),
-//          borderRadius: new BorderRadius.all(Radius.circular(8)),
-//        ),
-//        width: 220,
-//        height: 320,
-//        child: Column(
-//          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//          children: <Widget>[
-//            Container(
-//              width: 220,
-//              height: 180,
-//              child: new Image.asset(
-//                '$image',
-//              ),
-//            ),
-//            Spacer(
-//              flex: 5,
-//            ),
-//            Text(
-//              "$text",
-//              style: TextStyle(
-//                  color: Colors.teal,
-//                  fontSize: 30,
-//                  fontWeight: FontWeight.bold),
-//            ),
-//            Padding(
-//              padding: EdgeInsets.only(left: 5, right: 5, top: 7),
-//              child: Row(
-//                children: <Widget>[
-//                  Text(
-//                    '$percentageNum',
-//                    style: TextStyle(
-//                        color: Color(0xff039192),
-//                        fontWeight: FontWeight.bold,
-//                        fontSize: 15),
-//                  ),
-//                  Spacer(
-//                    flex: 2,
-//                  ),
-//                  Text(
-//                    '$percentage',
-//                    style: TextStyle(
-//                        color: Color(0xff039192),
-//                        fontWeight: FontWeight.bold,
-//                        fontSize: 15),
-//                  )
-//                ],
-//              ),
-//            ),
-//            Padding(
-//              padding: EdgeInsets.only(left: 5, right: 5, bottom: 2),
-//              child: StepProgressIndicator(
-//                totalSteps: 100,
-//                currentStep: 32,
-//                size: 6,
-//                padding: 0,
-//                selectedColor: Color(0xff039192),
-//                unselectedColor: Color(0xffECB720),
-//              ),
-//            ),
-//            FlatButton(
-//              padding: EdgeInsets.all(0),
-//              onPressed: () {
-//                return modal.mainBottomSheet(context);
-//              },
-//              child: Container(
-//                width: 110,
-//                height: 35,
-//                decoration: new BoxDecoration(
-//                  color: Color(0xffF51546),
-//                  border: new Border.all(color: Colors.white),
-//                  borderRadius: new BorderRadius.circular(50),
-//                ),
-//                child: Row(
-//                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-//                  children: <Widget>[
-//                    SizedBox(
-//                      height: 5,
-//                      width: 5,
-//                    ),
-//                    Container(
-//                      height: 20,
-//                      width: 20,
-//                      child: Center(
-//                          child: Image.asset(
-//                            'Images/donatee.png',
-//                            color: Colors.white,
-//                          )),
-//                    ),
-//                    Center(
-//                      child: new Text(
-//                        'Donate',
-//                        style:
-//                        new TextStyle(fontSize: 18.0, color: Colors.white),
-//                      ),
-//                    ),
-//                  ],
-//                ),
-//              ),
-//            ),
-//          ],
-//        ),
-//      ),
-//    );
-//  }
-//}
-
 class ProjectDonation extends StatelessWidget {
   ProjectDonation({this.image, this.text, this.percentageNum, this.percentage});
 
@@ -505,111 +387,116 @@ class ProjectDonation extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return LayoutBuilder(builder: (context, constrains) {
-      return Card(
-        elevation: 3,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        margin: const EdgeInsets.all(10),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-          child: SizedBox(
-            height: constrains.maxHeight,
-            width: constrains.maxWidth,
-            child: Column(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Image.asset(
+      return AspectRatio(
+        aspectRatio: 3 / 4,
+        child: Card(
+          elevation: 3,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          margin: const EdgeInsets.all(10),
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            child: SizedBox(
+              height: constrains.maxHeight,
+              width: constrains.maxWidth,
+              child: Column(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Image.asset(
 
-                  '$image',
-                  fit: BoxFit.fill,
-                  width: constrains.maxWidth,
+                    image,
+                    fit: BoxFit.fill,
+                    width: constrains.maxWidth,
 
-                ),
-
-                Spacer(flex: 1),
-                FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                        color: Colors.teal,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
                   ),
-                ),
 
-                Spacer(flex: 2),
-
-                Padding(
-                  padding: EdgeInsets.only(left: 8, right: 8, top: 7),
-                  child: Row(
-                    children: <Widget>[
-                      Text(
-                        '$percentageNum',
+                  Spacer(flex: 1),
+                  Padding(
+                    padding: const EdgeInsets.only(right:8.0, left: 8),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        text,
                         style: TextStyle(
-                            color: Color(0xff039192),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                            color: Colors.teal,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),
                       ),
-
-                      Spacer(flex: 2),
-
-                      Text(
-                        '$percentage',
-                        style: TextStyle(
-                            color: Color(0xff039192),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      )
-                    ],
-                  ),
-                ),
-
-                // Progress Indicator
-                Padding(
-                  padding: EdgeInsets.only(left: 8, right: 8, bottom: 2),
-                  child: StepProgressIndicator(
-                    totalSteps: 100,
-                    currentStep: 32,
-                    size: 6,
-                    padding: 0,
-                    selectedColor: Color(0xff039192),
-                    unselectedColor: Color(0xffECB720),
-                  ),
-                ),
-
-                Spacer(flex:1),
-
-                FlatButton(
-                  padding: EdgeInsets.all(0),
-                  onPressed: () => modal.mainBottomSheet(context),
-                  child: Container(
-                    width: 110,
-                    height: 35,
-                    decoration: new BoxDecoration(
-                      color: Color(0xffF51546),
-                      border: new Border.all(color: Colors.white),
-                      borderRadius: new BorderRadius.circular(50),
                     ),
+                  ),
+
+                  Spacer(flex: 2),
+
+                  Padding(
+                    padding: EdgeInsets.only(left: 8, right: 8, top: 7),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
-                        SizedBox(width: 5),
-                        Image.asset(
-                          'Images/donatee.png',
-                          color: Colors.white,
-                          height: 20,
-                          width: 20,
+                        Text(
+                          percentageNum,
+                          style: TextStyle(
+                              color: Color(0xff039192),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
                         ),
-                        Text('Donate',
-                            style: const TextStyle(
-                                fontSize: 18.0, color: Colors.white)),
+
+                        Spacer(flex: 2),
+
+                        Text(
+                          percentage,
+                          style: TextStyle(
+                              color: Color(0xff039192),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        )
                       ],
                     ),
                   ),
-                ),
-                Spacer(flex:1),
-              ],
+
+                  // Progress Indicator
+                  Padding(
+                    padding: EdgeInsets.only(left: 8, right: 8, bottom: 2),
+                    child: StepProgressIndicator(
+                      totalSteps: 100,
+                      currentStep: 32,
+                      size: 6,
+                      padding: 0,
+                      selectedColor: Color(0xff039192),
+                      unselectedColor: Color(0xffECB720),
+                    ),
+                  ),
+
+                  Spacer(flex:1),
+
+                  FlatButton(
+                    padding: EdgeInsets.all(0),
+                    onPressed: () => modal.mainBottomSheet(context),
+                    child: Container(
+                      width: 110,
+                      height: 35,
+                      decoration: new BoxDecoration(
+                        color: Color(0xffF51546),
+                        borderRadius: new BorderRadius.circular(50),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          SizedBox(width: 5),
+                          Image.asset(
+                            'Images/donatee.png',
+                            color: Colors.white,
+                            height: 20,
+                            width: 20,
+                          ),
+                          Text('Donate',
+                              style: const TextStyle(
+                                  fontSize: 18.0, color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Spacer(flex:1),
+                ],
+              ),
             ),
           ),
         ),

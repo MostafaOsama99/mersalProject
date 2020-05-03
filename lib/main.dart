@@ -1,19 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mersal/Screens/Mersal_Home.dart';
-import 'package:mersal/Screens/Sign_Up.dart';
-import 'package:mersal/Screens/Sign_In.dart';
-import 'package:mersal/Screens/Donation.dart';
-import 'package:mersal/Screens/Sponsors.dart';
-import 'package:mersal/Screens/About_Mersal.dart';
-import 'package:mersal/Screens/Charitable_activities.dart';
-import 'package:mersal/Screens/settings.dart';
-import 'package:mersal/Screens/Treat_Patient.dart';
-import 'package:mersal/Screens/Urgent_Cases.dart';
-import 'package:mersal/Screens/My_Donation.dart';
-import 'package:mersal/Screens/rate_app.dart';
-import 'package:mersal/Screens/mersal_projects.dart';
+import 'Screens/Mersal_Home.dart';
+import 'Screens/Sign_Up.dart';
+import 'Screens/Sign_In.dart';
+import 'Screens/Donation.dart';
+import 'Screens/Sponsors.dart';
+import 'Screens/About_Mersal.dart';
+import 'Screens/Charitable_activities.dart';
+import 'Screens/settings.dart';
+import 'Screens/Treat_Patient.dart';
+import 'Screens/Urgent_Cases.dart';
+import 'Screens/My_Donation.dart';
+import 'Screens/rate_app.dart';
+import 'Screens/mersal_projects.dart';
 import 'dart:io' show Platform;
+
+///this file is up to date 3/5/2020 at 2:27PM
 void main() => runApp(
 Platform.isIOS ? CupertinoApp : MaterialApp(
 
