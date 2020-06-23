@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mersal/Screens/Navigation_Menu.dart';
+import 'package:mersal/widgets/drawer_menu.dart';
 
 class Charitable extends StatelessWidget {
   @override
@@ -8,34 +8,16 @@ class Charitable extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: Size.fromHeight(50),
         child: AppBar(
-          iconTheme: new IconThemeData(color: Colors.teal),
-          title: Row(
-            children: <Widget>[
-              Spacer(
-                flex: 3,
-              ),
-              Image.asset('Images/Logo.png'),
-            ],
-          ),
-          backgroundColor: Colors.white,
+          title: Text('Charitable Activites'),
+          centerTitle: true,
+          actions: <Widget>[Image.asset('Images/Logo.png')],
         ),
       ),
-      drawer: Container(
-        width: 350,
-        child: Drawer(child: ListExtract()),
-      ),
+      drawer: DrawerMenu(),
       body: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 100, top: 10),
-            child: Text(
-              "Charitable Activites",
-              textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.teal, fontSize: 30),
-            ),
-          ),
           Container(
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

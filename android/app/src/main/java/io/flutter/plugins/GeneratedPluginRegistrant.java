@@ -14,7 +14,7 @@ import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
 public final class GeneratedPluginRegistrant {
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
-      com.appleeducate.appreview.AppReviewPlugin.registerWith(shimPluginRegistry.registrarFor("com.appleeducate.appreview.AppReviewPlugin"));
+    flutterEngine.getPlugins().add(new com.appleeducate.appreview.AppReviewPlugin());
     flutterEngine.getPlugins().add(new io.flutter.plugins.packageinfo.PackageInfoPlugin());
       fr.skyost.rate_my_app.RateMyAppPlugin.registerWith(shimPluginRegistry.registrarFor("fr.skyost.rate_my_app.RateMyAppPlugin"));
     flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());
