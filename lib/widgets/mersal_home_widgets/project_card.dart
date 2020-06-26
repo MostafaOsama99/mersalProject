@@ -59,7 +59,7 @@ class ProjectCard extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Text(
-                    '£${item.raised}/£${item.goal}',
+                    '£${item.collected}/£${item.amount}',
                     style: TextStyle(
                         color: Color(0xff039192),
                         fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ class ProjectCard extends StatelessWidget {
                   ),
                   Spacer(flex: 2),
                   Text(
-                    ((item.raised / item.goal)*100).toStringAsFixed(0) + '%',
+                    ((item.collected / item.amount)*100).toStringAsFixed(0) + '%',
                     style: TextStyle(
                         color: Color(0xff039192),
                         fontWeight: FontWeight.bold,
@@ -81,8 +81,8 @@ class ProjectCard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 8, right: 8, bottom: 2),
               child: StepProgressIndicator(
-                totalSteps: item.goal,
-                currentStep: item.raised,
+                totalSteps: item.amount.toInt(),
+                currentStep: item.collected.toInt(),
                 size: 6,
                 padding: 0,
                 selectedColor: Color(0xff039192),

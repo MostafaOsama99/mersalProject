@@ -12,7 +12,6 @@ class Sponsors extends StatelessWidget {
         preferredSize: Size.fromHeight(50),
         child: AppBar(
           title: Text("Our Sponsors"),
-          actions: <Widget>[Image.asset('Images/Logo.png')],
           centerTitle: true,
         ),
       ),

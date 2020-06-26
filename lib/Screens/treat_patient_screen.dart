@@ -2,20 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../models/patient_model.dart';
 import '../widgets/patient_card.dart';
-import '../demo_data.dart';
 
 class TreatPatient extends StatelessWidget {
   static const String route = '/treat_patient';
 
   final bool isUrgent;
-
   const TreatPatient({this.isUrgent = false});
 
   @override
   Widget build(BuildContext context) {
-    List<Patient> patientList = isUrgent
-        ? demoCases.where((patient) => patient.isUrgent).toList()
-        : demoCases;
+    final List<Patient> patientList = ModalRoute.of(context).settings.arguments ;
 
     // TODO: data getter / provider
     return Scaffold(

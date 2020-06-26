@@ -7,43 +7,33 @@ import 'models/project_model.dart';
 const List<Patient> demoCases = [
   Patient(
     id: '1',
-    goal: 18000,
-    percentage: 55,
-    raised: 10000,
-    isUrgent: true,
-    imageUrl: 'Images/blanket.jpg', //'Images/homless.webp'
+    amount: 18000,
+    collected: 10000,
+    imageUrl: 'Images/projects/blanket.jpg', //'Images/homless.webp'
   ),
   Patient(
     id: '2',
-    isUrgent: true,
-    goal: 16000,
-    percentage: 25,
-    raised: 4000,
-    imageUrl: 'Images/blanket.jpg', //'Images/hungry.webp',
+    amount: 16000,
+    collected: 4000,
+    imageUrl: 'Images/projects/blanket.jpg', //'Images/hungry.webp',
   ),
   Patient(
     id: '3',
-    goal: 15000,
-    percentage: 83,
-    isUrgent: true,
-    raised: 12500,
-    imageUrl: 'Images/blanket.jpg',// 'Images/poor.jpg',
+    amount: 15000,
+    collected: 12500,
+    imageUrl: 'Images/projects/blanket.jpg', // 'Images/poor.jpg',
   ),
   Patient(
     id: '4',
-    goal: 17000,
-    percentage: 47,
-    raised: 11000,
-    isUrgent: true,
-    imageUrl: 'Images/blanket.jpg', //'Images/volunt.webp',
+    amount: 17000,
+    collected: 11000,
+    imageUrl: 'Images/projects/blanket.jpg', //'Images/volunt.webp',
   ),
   Patient(
     id: '5',
-    goal: 8000,
-    percentage: 87,
-    raised: 7000,
-    isUrgent: false,
-    imageUrl: 'Images/blanket.jpg', //'Images/homless.webp'
+    amount: 8000,
+    collected: 7000,
+    imageUrl: 'Images/projects/blanket.jpg', //'Images/homless.webp'
   ),
 ];
 
@@ -52,47 +42,262 @@ final List<UserDonation> userDonation = [
   UserDonation(caseId: '3', id: '22', date: DateTime.now(), amount: 600),
 ];
 
-const List<Project> demoProjects = [
+final List<Project> demoProjects = [
   Project(
-      imageUrl: 'Images/talkkkkkkk.jpg',
+      imageUrl: 'Images/projects/talkkkkkkk.jpg',
       title: 'covid-19 camps',
-      raised: 1250,
-      goal: 5000,
-      id:'1'
-  ),
+      collected: 1250,
+      amount: 5000,
+      id: '1'),
   Project(
-      imageUrl: 'Images/blanket.jpg',
+      imageUrl: 'Images/projects/blanket.jpg',
       title: 'help with blanket',
-      raised: 15000,
-      goal: 30000,
-      id:'2'
-  ),
+      collected: 15000,
+      amount: 30000,
+      id: '2'),
   Project(
-      imageUrl: 'Images/talkkkkkkk.jpg',
+      imageUrl: 'Images/projects/talkkkkkkk.jpg',
       title: 'fix roof',
-      raised: 20000,
-      goal: 100000,
-      id:'3'
-  ),
+      collected: 20000,
+      amount: 100000,
+      id: '3'),
   Project(
-      imageUrl: 'Images/talkkkkkkk.jpg',
+      imageUrl: 'Images/projects/talkkkkkkk.jpg',
       title: 'connect water',
-      raised: 110000,
-      goal: 150000,
-      id:'4'
-  ),
+      collected: 110000,
+      amount: 150000,
+      id: '4'),
   Project(
-      imageUrl: 'Images/talkkkkkkk.jpg',
+      imageUrl: 'Images/projects/talkkkkkkk.jpg',
       title: 'covid-19 medicines',
-      raised: 4000,
-      goal: 50000,
-      id:'5'
-  ),
+      collected: 4000,
+      amount: 50000,
+      id: '5'),
   Project(
-      imageUrl: 'Images/talkkkkkkk.jpg',
+      imageUrl: 'Images/projects/talkkkkkkk.jpg',
       title: 'Communication',
-      raised: 20000,
-      goal: 30000,
-      id:'6'
-  ),
+      collected: 20000,
+      amount: 30000,
+      id: '6'),
+];
+
+var urgenrCases = [
+  {
+    "case_id": {
+      "id": 33,
+      "amount": 6000,
+      "description": "None",
+      "is_urgent": true
+    },
+    "code": "a34ec6faab895",
+    "sub_category": {
+      "id": 2,
+      "english_name": "Sub-21",
+      "arabic_name": "فرعي-21",
+      "main_category": {
+        "id": 1,
+        "english_name": "Main1",
+        "arabic_name": "اساسي 1",
+        "image": "/media/img/Categories/category_uzMtn80.png"
+      },
+      "image": "/media/img/Categories/category_XZqvGoV.png"
+    },
+    "collected": 0
+  }
+];
+
+var cases = [
+  {
+    "case_id": {
+      "id": 23,
+      "amount": 10000,
+      "description": "None",
+      "is_urgent": false
+    },
+    "code": "GZNGGMJX",
+    "sub_category": {
+      "id": 1,
+      "english_name": "Sub1-1",
+      "arabic_name": "فرعي1-1",
+      "main_category": {
+        "id": 1,
+        "english_name": "Main1",
+        "arabic_name": "اساسي 1",
+        "image": "/media/img/Categories/category_uzMtn80.png"
+      },
+      "image": "/media/img/Categories/category_8gnAWow.png"
+    },
+    "collected": 0
+  }
+];
+
+var projects = [
+  {
+    "project_id": {
+      "id": 25,
+      "amount": 564,
+      "description": "None",
+      "is_urgent": true
+    },
+    "name": "project 1",
+    "collected": 0
+  }
+];
+
+//TODO: when to use urgent Project in app ?
+var urgentProjects = [
+  {
+    "project_id": {
+      "id": 25,
+      "amount": 564,
+      "description": "None",
+      "is_urgent": true
+    },
+    "name": "project 1",
+    "collected": 0
+  },
+  {
+    "project_id": {
+      "id": 26,
+      "amount": 95684,
+      "description": "None",
+      "is_urgent": false
+    },
+    "name": "Project 2",
+    "collected": 0
+  }
+];
+
+//TODO: when to use main category data ?
+var charitableActivities = [
+  {
+    "id": 1,
+    "english_name": "Sub1-1",
+    "arabic_name": "فرعي1-1",
+    "main_category": {
+      "id": 1,
+      "english_name": "Main1",
+      "arabic_name": "اساسي 1",
+      "image": "/media/img/Categories/category_uzMtn80.png"
+    },
+    "image": "/media/img/Categories/category_8gnAWow.png"
+  },
+  {
+    "id": 2,
+    "english_name": "Sub-21",
+    "arabic_name": "فرعي-21",
+    "main_category": {
+      "id": 1,
+      "english_name": "Main1",
+      "arabic_name": "اساسي 1",
+      "image": "/media/img/Categories/category_uzMtn80.png"
+    },
+    "image": "/media/img/Categories/category_XZqvGoV.png"
+  },
+  {
+    "id": 3,
+    "english_name": "main12",
+    "arabic_name": "اساسي12",
+    "main_category": {
+      "id": 2,
+      "english_name": "Main2",
+      "arabic_name": "اساسي 2",
+      "image": "/media/img/Categories/category_wt3md91.png"
+    },
+    "image": "/media/img/Categories/category_DngK3T9.png"
+  },
+  {
+    "id": 5,
+    "english_name": "sub 1-1",
+    "arabic_name": "فرعي 1-1",
+    "main_category": {
+      "id": 10,
+      "english_name": "cat1",
+      "arabic_name": "قسم 1",
+      "image": "/media/img/Categories/category.png"
+    },
+    "image": "/media/img/Categories/category.png"
+  },
+  {
+    "id": 6,
+    "english_name": "sub12",
+    "arabic_name": "فرعي12",
+    "main_category": {
+      "id": 6,
+      "english_name": "main test2",
+      "arabic_name": "اساسي تجربة 1",
+      "image": "/media/img/Categories/4.PNG"
+    },
+    "image": "/media/img/Categories/category.png"
+  }
+];
+
+var slideImages = [
+  {"id": 1, "name": "test1", "image": "/media/1.jpg"},
+  {
+    "id": 3,
+    "name": "تجربة1",
+    "image": "/media/Kairo_Ibn_Tulun_Moschee_BW_4.jpg"
+  }
+];
+
+var sponsors = [
+  {
+    "id": 1,
+    "name": "sponsor 1",
+    "image":
+        "/media/%D8%AC%D8%A7%D9%85%D8%B9_%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D9%84%D9%8A.jpg"
+  },
+  {"id": 2, "name": "تجربة 2", "image": "/media/EER5oL9XYAECd5B.jpg"}
+];
+
+var userDonation5 = [
+  {
+    "id": 7,
+    "donor": {
+      "id": 8,
+      "name": "apitest_new1",
+      "city_1": "6 octobar",
+      "country_1": "giza",
+      "apartment_no_1": "16",
+      "building_1": null,
+      "area_1": null,
+      "phone_1": null,
+      "street_1": null,
+      "floor_1": null,
+      "address_1": null,
+      "city_2": null,
+      "country_2": null,
+      "apartment_no_2": null,
+      "building_2": null,
+      "area_2": null,
+      "phone_2": null,
+      "street_2": null,
+      "floor_2": null,
+      "address_2": null
+    },
+    "contribution": {
+      "id": 25,
+      "amount": 564,
+      "description": "None",
+      "is_urgent": true
+    },
+    "assigned_agent": null,
+    "amount": 300,
+    "address_no": "1",
+    "charitable_activity": {
+      "id": 2,
+      "english_name": "Sub-21",
+      "arabic_name": "فرعي-21",
+      "main_category": {
+        "id": 1,
+        "english_name": "Main1",
+        "arabic_name": "اساسي 1",
+        "image": "/media/img/Categories/category_uzMtn80.png"
+      },
+      "image": "/media/img/Categories/category_XZqvGoV.png"
+    },
+    "date": "2020-03-29",
+    "collected": true
+  }
 ];

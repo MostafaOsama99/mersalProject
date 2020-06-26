@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:mersal/demo_data.dart';
 
 import '../widgets/mersal_home_widgets/home_viewer.dart';
 import '../widgets/mersal_home_widgets/mersal_in_numbers_widget.dart';
@@ -10,6 +9,7 @@ import 'treat_patient_screen.dart';
 import '../widgets/drawer_menu.dart';
 import 'sponsors_screen.dart';
 import 'Charitable_activities.dart';
+import '../demo_data.dart';
 
 class MersalHome extends StatefulWidget {
   @override
@@ -32,8 +32,11 @@ class MesralHome extends State<MersalHome> {
             title: Text('Mersal'),
             centerTitle: true,
             actions: <Widget>[
-              Image.asset(
-                'Images/Logo.png',
+              Padding(
+                padding: const EdgeInsets.only(right:10),
+                child: Image.asset(
+                 'Images/mersal.jpg', // 'Images/Logo.png',
+                ),
               )
             ],
           ),
@@ -50,21 +53,23 @@ class MesralHome extends State<MersalHome> {
                 )),
             SizedBox(height: 10),
 
+            //TODO: you may refactor this to pass data to see more button
+            /// Charitable activities
             HomeViewer(
               title: 'Charitable activities',
               route: 'Charitable',
-              listHeight: 140,
+              listHeight: 150,
               view: <Widget>[
                 FlatButton(
                     padding: EdgeInsets.all(0),
                     onPressed: () {
-                      Navigator.pushNamed(context, TreatPatient.route);
+                      Navigator.pushNamed(context, TreatPatient.route, arguments: demoCases );
                     },
                     /*Navigator.push(context, MaterialPageRoute(builder: (context){
                    return RateMyAppTestApp();
                  })); */
                     child: CharitableExtract(
-                      image: 'Images/patientt.png',
+                      image: 'Images/projects/patientt.png',
                       text: "Treat a patient",
                     ))
               ],
@@ -116,15 +121,15 @@ class MesralHome extends State<MersalHome> {
                       MersalInNumbers(
                           title: 'Donors',
                           number: 10000,
-                          image: 'Images/donors.png'),
+                          image: 'Images/settings/donors.png'),
                       MersalInNumbers(
                           title: 'Projects',
                           number: 20,
-                          image: 'Images/projects.png'),
+                          image: 'Images/settings/projects.png'),
                       MersalInNumbers(
                           title: 'Donations',
                           number: 36000,
-                          image: 'Images/donation.png'),
+                          image: 'Images/settings/donation.png'),
                     ],
                   ),
                   SizedBox(height: 20)

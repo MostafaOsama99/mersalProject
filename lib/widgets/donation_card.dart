@@ -60,11 +60,11 @@ class DonationCard extends StatelessWidget {
                       Spacer(flex: 3),
 
                       //TODO: you may have to calculate the percentage when using APIs
-                      Text("${_case.percentage}%"),
+                      Text(((_case.collected / _case.amount)*100).toStringAsFixed(0) + '%'),
 
                       StepProgressIndicator(
-                        totalSteps: 100,
-                        currentStep: _case.percentage,
+                        totalSteps: _case.amount,
+                        currentStep: _case.collected,
                         size: 6,
                         padding: 0,
                         selectedColor: Color(0xff039192),
@@ -85,12 +85,12 @@ class DonationCard extends StatelessWidget {
                               children: [
                                 TextSpan(text: 'Raised:'),
                                 TextSpan(
-                                    text: _case.raised.toStringAsFixed(0) +
+                                    text: _case.collected.toStringAsFixed(0) +
                                         'LE  ',
                                     style: TextStyle(color: Colors.amber)),
                                 TextSpan(text: 'Goal: '),
                                 TextSpan(
-                                    text: _case.goal.toStringAsFixed(0) + 'L.E',
+                                    text: _case.amount.toStringAsFixed(0) + 'L.E',
                                     style: TextStyle(color: Colors.teal))
                               ]),
                         ),

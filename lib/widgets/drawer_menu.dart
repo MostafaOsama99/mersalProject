@@ -12,37 +12,37 @@ class DrawerMenu extends StatelessWidget {
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             ClickableTile(
-              image: 'Images/home.png',
+              image: 'Images/drawer/home.png',
               title: "Home",
               onTap: () => navigate(context, "Mersal Home"),
             ),
             ClickableTile(
-                image: 'Images/urgent.png',
+                image: 'Images/drawer/urgent.png',
                 title: "Urgent cases",
                 onTap: () => navigate(context, "/treat_patient/urgent")),
             ////////////////// mfesh Urgent
             ClickableTile(
-                image: 'Images/chartiable.png',
+                image: 'Images/drawer/chartiable.png',
                 title: "Charitable activities",
                 onTap: () => navigate(context, "Charitable")),
             ClickableTile(
-                image: 'Images/heart.png',
+                image: 'Images/drawer/heart.png',
                 title: "My Donation",
                 onTap: () => navigate(context, 'My Donation')),
 
             //////////////////// Msh 3arefha
-            ClickableTile(image: 'Images/zakatek.png', title: "Pay zakat"),
+            ClickableTile(image: 'Images/drawer/zakatek.png', title: "Pay zakat"),
             ClickableTile(
-                image: 'Images/rate.png',
+                image: 'Images/drawer/rate.png',
                 title: "Rate the app",
                 onTap: () => navigate(context, "Rate App")),
             /////////////////////
             ClickableTile(
-                image: 'Images/settings.png',
+                image: 'Images/drawer/settings.png',
                 title: "Settings",
                 onTap: () => navigate(context, 'Settings')),
             ClickableTile(
-                image: 'Images/Info.png',
+                image: 'Images/drawer/Info.png',
                 title: "About Mersal",
                 divider: false,
                 onTap: () => navigate(context, "About Mersal")),
@@ -55,9 +55,9 @@ class DrawerMenu extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      SocialMediaIcon(icon: 'Images/facebook.png'),
-                      SocialMediaIcon(icon: 'Images/insta.png'),
-                      SocialMediaIcon(icon: 'Images/youtube.png'),
+                      SocialMediaIcon(icon: 'Images/drawer/facebook.png'),
+                      SocialMediaIcon(icon: 'Images/drawer/insta.png'),
+                      SocialMediaIcon(icon: 'Images/drawer/youtube.png'),
                     ],
                   ),
                 ),

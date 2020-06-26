@@ -16,8 +16,7 @@ startDonate(BuildContext context) {
 class DonationSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
+    return Padding(
         padding: EdgeInsets.all(12),
         child: Column(
           children: <Widget>[
@@ -49,36 +48,41 @@ class DonationSheet extends StatelessWidget {
               inactiveColor: Colors.grey,
               tabsData: [
                 NavTabData('Images/sms.png', 'SMS'),
-                NavTabData('Images/credit-card.png', 'Credit Card'),
-                NavTabData('Images/mandob.png', 'Need an agent')
+                NavTabData('Images/nav_icons/credit-card.png', 'Bank Card'),
+                NavTabData('Images/nav_icons/mandob.png', 'Need an agent')
               ],
-              bodies: [
+              body: [
                 NavBody(
                   data: [
                     NavBodyData(
-                        image: 'Images/cat.png',
+                        image: 'Images/nav_icons/cat.png',
                         title: 'Choose a Charitable activity'),
                   ],
                   donateButton: () {},
                 ),
+
+///fell free to text your text field here
+//                TextField(
+//                  keyboardType: TextInputType.number,
+//                ),
                 NavBody(
                   data: [
-                    NavBodyData(image: "Images/amount.png", title: 'Amount'),
+                    NavBodyData(image: "Images/nav_icons/amount.png", title: 'Amount'),
                   ],
                   donateButton: () {},
                 ),
                 NavBody(
                   data: [
                     NavBodyData(
-                      image: "Images/cat.png",
+                      image: "Images/nav_icons/cat.png",
                       title: "Choose a charitable activity",
                     ),
                     NavBodyData(
-                      image: "Images/amount.png",
+                      image: "Images/nav_icons/amount.png",
                       title: "Amount",
                     ),
                     NavBodyData(
-                      image: "Images/address.png",
+                      image: "Images/nav_icons/address.png",
                       title: "Choose your address",
                     ),
                   ],
@@ -135,7 +139,6 @@ class DonationSheet extends StatelessWidget {
 //                content
           ],
         ),
-      ),
     );
   }
 }

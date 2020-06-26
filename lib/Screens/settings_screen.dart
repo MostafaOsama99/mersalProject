@@ -15,7 +15,9 @@ class Settings extends StatelessWidget {
           title: Text('Settings'),
           centerTitle: true,
           actions: <Widget>[
-            Image.asset('Images/Logo.png'),
+            Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Image.asset('Images/mersal.jpg'))
           ],
         ),
       ),
@@ -29,17 +31,17 @@ class Settings extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               ClickableTile(
-                image: 'Images/profile.png',
+                image: 'Images/settings/profile.png',
                 title: 'Profile',
                 onTap: () {},
               ),
               ClickableTile(
-                image: 'Images/lang.png',
+                image: 'Images/settings/lang.png',
                 title: 'Language',
                 onTap: () {},
               ),
               ClickableTile(
-                image: 'Images/logout.png',
+                image: 'Images/settings/logout.png',
                 title: 'Logout',
                 onTap: () => Navigator.pushNamed(context, 'Sign In'),
                 divider: false,
@@ -84,7 +86,7 @@ class Settings extends StatelessWidget {
 //                          Container(
 //                            width: 40,
 //                            height: 40,
-//                            child: Image.asset("Images/profile.png"),
+//                            child: Image.asset("Images/settings/profile.png"),
 //                          ),
 //                          SizedBox(
 //                            width: 20,
@@ -104,7 +106,7 @@ class Settings extends StatelessWidget {
 //                          Container(
 //                            width: 40,
 //                            height: 40,
-//                            child: Image.asset("Images/lang.png"),
+//                            child: Image.asset("Images/settings/lang.png"),
 //                          ),
 //                          SizedBox(
 //                            width: 20,
@@ -129,7 +131,7 @@ class Settings extends StatelessWidget {
 //                            Container(
 //                              width: 40,
 //                              height: 40,
-//                              child: Image.asset("Images/logout.png"),
+//                              child: Image.asset("Images/settings/logout.png"),
 //                            ),
 //                            SizedBox(
 //                              width: 20,

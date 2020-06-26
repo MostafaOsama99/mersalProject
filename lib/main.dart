@@ -11,8 +11,9 @@ import 'Screens/settings_screen.dart';
 import 'Screens/treat_patient_screen.dart';
 import 'Screens/my_donation_screen.dart';
 import 'Screens/rate_app.dart';
-import 'Screens/mersal_projects_screen.dart';
+import 'Screens/projects_screen.dart';
 import 'dart:io' show Platform;
+
 
 ///this file is up to date 3/5/2020 at 2:27PM
 void main() => runApp(Platform.isIOS

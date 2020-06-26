@@ -1,18 +1,16 @@
 import 'package:flutter/foundation.dart';
 
 class Patient {
-  final String id, imageUrl;
-  final int percentage;
-  final double goal;
-  final double raised;
-  final bool isUrgent;
+  final String id, imageUrl, description;
+  final int amount;
+  final int collected;
 
+  //TODO: make description required
   const Patient({
-    @required this.isUrgent,
-    @required this.raised,
+    this.description,
+    @required this.collected,
     @required this.id,
-    @required this.goal,
-    @required this.percentage,
+    @required this.amount,
     @required this.imageUrl,
   });
 }

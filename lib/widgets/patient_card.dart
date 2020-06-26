@@ -8,8 +8,9 @@ import '../models/patient_model.dart';
 //TODO: Implement image.network
 
 class PatientCard extends StatelessWidget {
-  final Patient _case;
-  const PatientCard(this._case);
+   final Patient patient;
+   const PatientCard(this.patient);
+
   final double height = 160; //widget height
 
   @override
@@ -23,7 +24,7 @@ class PatientCard extends StatelessWidget {
           children: <Widget>[
             Flexible(
               flex: 4,
-              child: Image.asset(_case.imageUrl,
+              child: Image.asset(patient.imageUrl,
                 fit: BoxFit.fitHeight,
                 height: height,
               ),
@@ -41,18 +42,18 @@ class PatientCard extends StatelessWidget {
                     children: <Widget>[
 
                       Text(
-                        "Case #${_case.id}",
+                        "Case #${patient.id}",
                         style: TextStyle(color: Colors.teal, fontSize: 18),
                         textAlign: TextAlign.left,
                       ),
 
                       Spacer(flex: 3),
 
-                      Text("${_case.percentage}%"),
+                      Text(((patient.collected / patient.amount)*100).toStringAsFixed(0) + '%'),
 
                       StepProgressIndicator(
-                        totalSteps: 100,
-                        currentStep: _case.percentage,
+                        totalSteps: patient.amount,
+                        currentStep: patient.collected,
                         size: 6,
                         padding: 0,
                         selectedColor: Color(0xff039192),
@@ -72,11 +73,11 @@ class PatientCard extends StatelessWidget {
                               children: [
                                 TextSpan(text: 'Raised:'),
                                 TextSpan(
-                                    text: _case.raised.toStringAsFixed(0)+'LE  ',
+                                    text: patient.collected.toString() +'LE  ',
                                     style: TextStyle(color: Colors.amber)),
                                 TextSpan(text: 'Goal: '),
                                 TextSpan(
-                                    text: _case.goal.toStringAsFixed(0)+'L.E',
+                                    text: patient.amount.toString() +'L.E',
                                     style: TextStyle(color: Colors.teal))
                               ]),
                         ),

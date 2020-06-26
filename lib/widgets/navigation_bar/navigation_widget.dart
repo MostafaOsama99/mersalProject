@@ -12,10 +12,10 @@ class NavigationWidget extends StatefulWidget {
   @required final  activeColor;
   @required final  inactiveColor;
   @required final List<NavTabData> tabsData;
-  @required final List<NavBody> bodies;
+  @required final List<Widget> body;
 
   const NavigationWidget(
-      {this.activeColor, this.inactiveColor, this.tabsData, this.bodies});
+      {this.activeColor, this.inactiveColor, this.tabsData, this.body});
 
   @override
   _NavigationWidgetState createState() => _NavigationWidgetState();
@@ -53,7 +53,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
     return Column(
       children: <Widget>[
         Row(children: tabs),
-        widget.bodies[choice]
+        widget.body[choice]
       ],
     );
   }
