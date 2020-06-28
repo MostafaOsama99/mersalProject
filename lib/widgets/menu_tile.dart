@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-//used in drawer menu and settings
+///used in drawer menu and settings
 
-class ClickableTile extends StatelessWidget {
+class MenuTile extends StatelessWidget {
   final String image;
   final String title;
   final Function onTap;
   final bool divider;
 
-  const ClickableTile({this.image, this.onTap, this.divider = true, this.title});
+  const MenuTile({this.image, this.onTap, this.divider = true, this.title});
 
   @override
   Widget build(BuildContext context) {

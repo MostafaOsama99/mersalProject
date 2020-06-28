@@ -6,7 +6,7 @@ import 'Screens/login.dart';
 import 'Screens/donation_sheet.dart';
 import 'Screens/sponsors_screen.dart';
 import 'Screens/About_Mersal.dart';
-import 'Screens/Charitable_activities.dart';
+import 'Screens/charitable_activities.dart';
 import 'Screens/settings_screen.dart';
 import 'Screens/treat_patient_screen.dart';
 import 'Screens/my_donation_screen.dart';
@@ -45,7 +45,7 @@ void main() => runApp(Platform.isIOS
           //switch for urgent cases
           'Settings': (context) => Settings(),
           'About Mersal': (context) => AboutMersal(),
-          'Charitable': (context) => Charitable(),
+          'Charitable': (context) => CharitableActivities(),
           'Sponsors': (context) => Sponsors(),
           'Donation': (context) => DonationSheet(),
           'Mersal Home': (context) => MersalHome(),

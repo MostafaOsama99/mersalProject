@@ -6,6 +6,7 @@ class BankCard extends StatelessWidget {
     return TextField(
       keyboardType: TextInputType.number,
 
+
     );
   }
 }

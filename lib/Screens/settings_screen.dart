@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/drawer_menu.dart';
-import '../widgets/clickable_tile.dart';
+import '../widgets/menu_tile.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -30,17 +30,17 @@ class Settings extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              ClickableTile(
+              MenuTile(
                 image: 'Images/settings/profile.png',
                 title: 'Profile',
                 onTap: () {},
               ),
-              ClickableTile(
+              MenuTile(
                 image: 'Images/settings/lang.png',
                 title: 'Language',
                 onTap: () {},
               ),
-              ClickableTile(
+              MenuTile(
                 image: 'Images/settings/logout.png',
                 title: 'Logout',
                 onTap: () => Navigator.pushNamed(context, 'Sign In'),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../demo_data.dart';
-import '../widgets/patient_card.dart';
+import '../widgets/item_card.dart';
 
 //TODO: use dynamic data flow, remove demoData form here
 class Projects extends StatelessWidget {
@@ -27,7 +27,7 @@ class Projects extends StatelessWidget {
           ),
         ),
         body: ListView.builder(
-          itemBuilder: (context, i) => PatientCard(demoProjects[i]),
+          itemBuilder: (context, i) => ItemCard(demoProjects[i]),
           itemCount: demoProjects.length,
         ));
   }

@@ -1,47 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mersal/widgets/drawer_menu.dart';
 
-class Charitable extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppBar(
-          title: Text('Charitable Activites'),
-          centerTitle: true,
-        ),
-      ),
-      drawer: DrawerMenu(),
-      body: Column(
-        children: <Widget>[
-          GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+///this widget used in charitable activities screen & home screen
+///should we present icon (80x80) or an image ?
+///if the answer is image so make image fit attribute = BoxFit.cover
+///
+/// this widget should have a function on tap to navigate to required screen
 
-              ///child aspect ratio
-              childAspectRatio: 130 / 150,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-            shrinkWrap: true,
-            itemCount: 4,
-            itemBuilder: (context, i) {
-              return CharitableExtract(
-                image: 'Images/well.png',
-                text: 'well driling',
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CharitableExtract extends StatelessWidget {
-  CharitableExtract({this.image, this.text});
+class CharitableTile extends StatelessWidget {
+  CharitableTile({this.image, this.text});
 
   final String image, text;
 
@@ -77,10 +43,10 @@ class CharitableExtract extends StatelessWidget {
               Expanded(
                   child: Center(
                       child: Image.asset(
-                image,
-                height: 80,
-                width: 80,
-              ))),
+                        image,
+                        height: 80,
+                        width: 80,
+                      ))),
               Container(
                 height: 30,
                 color: Color(0xffBDBDBD),
@@ -88,7 +54,7 @@ class CharitableExtract extends StatelessWidget {
                   child: Text(
                     text,
                     style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                    TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
                     textAlign: TextAlign.center,
                   ),
                 ),

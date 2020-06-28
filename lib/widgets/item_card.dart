@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-import '../models/patient_model.dart';
+import '../Screens/donation_sheet.dart';
+import '../models/project_model.dart';
+import '../Screens/item_details_sheet.dart';
 
 //card contains image and info about mersal project --16/6
 //TODO: Implement image.network
+//TODO: check for dynamic variable => checks for [item] type
 
-class PatientCard extends StatelessWidget {
-   final Patient patient;
-   const PatientCard(this.patient);
+class ItemCard extends StatelessWidget {
+   final item;
+   const ItemCard(this.item);
 
   final double height = 160; //widget height
 
@@ -24,7 +27,7 @@ class PatientCard extends StatelessWidget {
           children: <Widget>[
             Flexible(
               flex: 4,
-              child: Image.asset(patient.imageUrl,
+              child: Image.asset(item.imageUrl,
                 fit: BoxFit.fitHeight,
                 height: height,
               ),
@@ -42,18 +45,18 @@ class PatientCard extends StatelessWidget {
                     children: <Widget>[
 
                       Text(
-                        "Case #${patient.id}",
+                        item is Project ? item.title : "Case #${item.id}",
                         style: TextStyle(color: Colors.teal, fontSize: 18),
                         textAlign: TextAlign.left,
                       ),
 
                       Spacer(flex: 3),
 
-                      Text(((patient.collected / patient.amount)*100).toStringAsFixed(0) + '%'),
+                      Text(((item.collected / item.amount)*100).toStringAsFixed(0) + '%'),
 
                       StepProgressIndicator(
-                        totalSteps: patient.amount,
-                        currentStep: patient.collected,
+                        totalSteps: item.amount,
+                        currentStep: item.collected,
                         size: 6,
                         padding: 0,
                         selectedColor: Color(0xff039192),
@@ -73,11 +76,11 @@ class PatientCard extends StatelessWidget {
                               children: [
                                 TextSpan(text: 'Raised:'),
                                 TextSpan(
-                                    text: patient.collected.toString() +'LE  ',
+                                    text: item.collected.toString() +'LE  ',
                                     style: TextStyle(color: Colors.amber)),
                                 TextSpan(text: 'Goal: '),
                                 TextSpan(
-                                    text: patient.amount.toString() +'L.E',
+                                    text: item.amount.toString() +'L.E',
                                     style: TextStyle(color: Colors.teal))
                               ]),
                         ),
@@ -89,7 +92,7 @@ class PatientCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           MaterialButton(
-                            onPressed: (){},
+                            onPressed: ()=> startDonate(context) ,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                             child: Text( 'Donate',
                               style: TextStyle(color: Colors.white, fontSize: 15),
@@ -102,7 +105,7 @@ class PatientCard extends StatelessWidget {
                             highlightColor: Colors.red.shade700,
                           ),
                           MaterialButton(
-                            onPressed: (){},
+                            onPressed: ()=> showItemDetails(context, item),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                             child: Text( 'read more',
                               style: TextStyle(color: Colors.white, fontSize: 13.5),

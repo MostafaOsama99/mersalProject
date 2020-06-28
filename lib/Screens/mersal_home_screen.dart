@@ -8,7 +8,7 @@ import '../widgets/mersal_home_widgets/project_card.dart';
 import 'treat_patient_screen.dart';
 import '../widgets/drawer_menu.dart';
 import 'sponsors_screen.dart';
-import 'Charitable_activities.dart';
+import '../widgets/charitable_tile.dart';
 import '../demo_data.dart';
 
 class MersalHome extends StatefulWidget {
@@ -55,6 +55,7 @@ class MesralHome extends State<MersalHome> {
 
             //TODO: you may refactor this to pass data to see more button
             /// Charitable activities
+            /// should have a list of CharitableTile
             HomeViewer(
               title: 'Charitable activities',
               route: 'Charitable',
@@ -68,7 +69,7 @@ class MesralHome extends State<MersalHome> {
                     /*Navigator.push(context, MaterialPageRoute(builder: (context){
                    return RateMyAppTestApp();
                  })); */
-                    child: CharitableExtract(
+                    child: CharitableTile(
                       image: 'Images/projects/patientt.png',
                       text: "Treat a patient",
                     ))

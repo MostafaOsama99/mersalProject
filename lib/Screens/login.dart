@@ -23,10 +23,11 @@ class _SignInState extends State<SignIn> {
 //,floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     //EdgeInsets.only(right: width * 0.12, bottom: height * 0.130),
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       floatingActionButton: Padding(
         padding: EdgeInsets.only(right: width * 0.12, bottom: height * 0.130),
         child: FloatingActionButton(
-
+          autofocus: false,
           onPressed: () {
             Navigator.pushNamed(context, 'Sign Up');
           },

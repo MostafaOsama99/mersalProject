@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'clickable_tile.dart';
+import 'menu_tile.dart';
 
 class DrawerMenu extends StatelessWidget {
   @override
@@ -11,37 +11,38 @@ class DrawerMenu extends StatelessWidget {
         child: Column(
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            ClickableTile(
+            MenuTile(
               image: 'Images/drawer/home.png',
               title: "Home",
               onTap: () => navigate(context, "Mersal Home"),
             ),
-            ClickableTile(
+            MenuTile(
                 image: 'Images/drawer/urgent.png',
                 title: "Urgent cases",
-                onTap: () => navigate(context, "/treat_patient/urgent")),
+                onTap: () => navigate(context, "/treat_patient/urgent", )),
             ////////////////// mfesh Urgent
-            ClickableTile(
+            MenuTile(
                 image: 'Images/drawer/chartiable.png',
                 title: "Charitable activities",
                 onTap: () => navigate(context, "Charitable")),
-            ClickableTile(
+            MenuTile(
                 image: 'Images/drawer/heart.png',
                 title: "My Donation",
                 onTap: () => navigate(context, 'My Donation')),
 
             //////////////////// Msh 3arefha
-            ClickableTile(image: 'Images/drawer/zakatek.png', title: "Pay zakat"),
-            ClickableTile(
+            //TODO: remove comment
+//            ClickableTile(image: 'Images/drawer/zakatek.png', title: "Pay zakat"),
+            MenuTile(
                 image: 'Images/drawer/rate.png',
                 title: "Rate the app",
                 onTap: () => navigate(context, "Rate App")),
             /////////////////////
-            ClickableTile(
+            MenuTile(
                 image: 'Images/drawer/settings.png',
                 title: "Settings",
                 onTap: () => navigate(context, 'Settings')),
-            ClickableTile(
+            MenuTile(
                 image: 'Images/drawer/Info.png',
                 title: "About Mersal",
                 divider: false,

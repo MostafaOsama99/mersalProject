@@ -4,6 +4,7 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '../models/patient_model.dart';
 import '../models/user_donation_model.dart';
+import '../Screens/item_details_sheet.dart';
 /*
 * we should get list of user donation purchase,
 * then we should find these donated projects from total mersal projects,
@@ -59,7 +60,6 @@ class DonationCard extends StatelessWidget {
 
                       Spacer(flex: 3),
 
-                      //TODO: you may have to calculate the percentage when using APIs
                       Text(((_case.collected / _case.amount)*100).toStringAsFixed(0) + '%'),
 
                       StepProgressIndicator(

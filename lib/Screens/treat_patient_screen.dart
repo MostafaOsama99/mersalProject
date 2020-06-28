@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/patient_model.dart';
-import '../widgets/patient_card.dart';
+import '../widgets/item_card.dart';
+import 'package:mersal/demo_data.dart';
 
 class TreatPatient extends StatelessWidget {
   static const String route = '/treat_patient';
@@ -11,7 +12,7 @@ class TreatPatient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Patient> patientList = ModalRoute.of(context).settings.arguments ;
+    final List<Patient> patientList = isUrgent ? demoUrgentCases : ModalRoute.of(context).settings.arguments ;
 
     // TODO: data getter / provider
     return Scaffold(
@@ -33,7 +34,7 @@ class TreatPatient extends StatelessWidget {
         body: ListView.builder(
             itemCount: patientList.length,
             itemBuilder: (ctx, i) {
-              return PatientCard(patientList[i]);
+              return ItemCard(patientList[i]);
             }));
   }
 }

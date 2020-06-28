@@ -56,7 +56,7 @@ class DonationSheet extends StatelessWidget {
                   data: [
                     NavBodyData(
                         image: 'Images/nav_icons/cat.png',
-                        title: 'Choose a Charitable activity'),
+                        title: ' 1 sms costs you 5 LE'),
                   ],
                   donateButton: () {},
                 ),
@@ -73,10 +73,6 @@ class DonationSheet extends StatelessWidget {
                 ),
                 NavBody(
                   data: [
-                    NavBodyData(
-                      image: "Images/nav_icons/cat.png",
-                      title: "Choose a charitable activity",
-                    ),
                     NavBodyData(
                       image: "Images/nav_icons/amount.png",
                       title: "Amount",
