@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../donate_button.dart';
-import '../../models/nav_body_data.dart';
+import '../widgets/donate_button.dart';
+import '../models/nav_body_data.dart';
 
 class NavBody extends StatelessWidget {
   final List<NavBodyData> data; //to handle many tiles in the same screen
@@ -16,7 +16,7 @@ class NavBody extends StatelessWidget {
         padding: const EdgeInsets.only(right: 6, left: 6, bottom: 8),
 
         //this structure is more easier than the customized old one, keep it if u like it
-        //TODO: chose a structure
+        //TODO: choose a structure
 //        child: Card(
 //            elevation: 2,
 //            shape:
@@ -62,13 +62,24 @@ class NavBody extends StatelessWidget {
                   height: 30,
                 ),
                 SizedBox(width: 20),
+
+//                Padding(
+//                  padding: const EdgeInsets.symmetric(vertical: 5),
+//                  child: Text(
+//                    data[i].title,
+//                    style: TextStyle(fontSize: 18),
+//                  ),
+//                ),
+
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Text(
-                    data[i].title,
-                    style: TextStyle(fontSize: 18),
-                  ),
+                  child:
+                  data[i].clickableText,
+
+
                 ),
+
+
                 Spacer(flex: 1),
                 Padding(
                   padding: const EdgeInsets.only(right: 10),

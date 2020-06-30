@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mersal/Screens/donation_sheet.dart';
 import 'package:mersal/models/project_model.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-import '../models/patient_model.dart';
 import '../widgets/donate_button.dart';
 
 showItemDetails(BuildContext context, item) {
@@ -10,7 +9,7 @@ showItemDetails(BuildContext context, item) {
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
-        return Container(
+        return SizedBox(
             height: MediaQuery.of(context).size.height * 0.65,
             child: ItemDetails(item));
       });

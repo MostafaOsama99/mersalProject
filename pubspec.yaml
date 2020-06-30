@@ -94,8 +94,9 @@ flutter:
   - Images/lang.png
   - Images/logout.png
   - Images/akhbar.png
-  - Images/mersal_appBar.jpg
   - Images/mersal.jpg
+  - Images/settings/edit.png
+  - Images/nav_icons/sms2.png
 
 
 

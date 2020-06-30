@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../models/nav_tab_data.dart';
-import 'nav_body.dart';
 import 'nav_tab.dart';
 
 /// this widget builds navigation bar with it's body

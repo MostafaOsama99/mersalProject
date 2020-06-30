@@ -11,8 +11,8 @@ const List<Patient> demoCases = [
       collected: 10000,
       imageUrl: 'Images/projects/blanket.jpg',
       description:
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''' //'Images/homless.webp'
-      ),
+      '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''' //'Images/homless.webp'
+  ),
   Patient(
     id: '2',
     amount: 16000,
@@ -20,7 +20,7 @@ const List<Patient> demoCases = [
     imageUrl: 'Images/projects/blanket.jpg',
     //'Images/hungry.webp',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
   ),
   Patient(
     id: '3',
@@ -29,7 +29,7 @@ const List<Patient> demoCases = [
     imageUrl: 'Images/projects/blanket.jpg',
     // 'Images/poor.jpg',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
   ),
   Patient(
     id: '4',
@@ -38,7 +38,7 @@ const List<Patient> demoCases = [
     imageUrl: 'Images/projects/blanket.jpg',
     //'Images/volunt.webp',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
     be a part of our mission.''',
   ),
   Patient(
@@ -48,7 +48,7 @@ const List<Patient> demoCases = [
     imageUrl: 'Images/projects/blanket.jpg',
     //'Images/homless.webp'
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
   ),
 ];
 
@@ -59,8 +59,8 @@ const List<Patient> demoUrgentCases = [
       collected: 10000,
       imageUrl: 'Images/projects/blanket.jpg',
       description:
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''' //'Images/homless.webp'
-      ),
+      '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''' //'Images/homless.webp'
+  ),
   Patient(
     id: '3',
     amount: 15000,
@@ -68,7 +68,7 @@ const List<Patient> demoUrgentCases = [
     imageUrl: 'Images/projects/blanket.jpg',
     // 'Images/poor.jpg',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
   ),
   Patient(
     id: '5',
@@ -77,7 +77,7 @@ const List<Patient> demoUrgentCases = [
     imageUrl: 'Images/projects/blanket.jpg',
     //'Images/homless.webp'
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
   ),
 ];
 
@@ -94,7 +94,7 @@ final List<Project> demoProjects = [
     amount: 5000,
     id: '1',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
   ),
   Project(
     imageUrl: 'Images/projects/blanket.jpg',
@@ -103,7 +103,7 @@ final List<Project> demoProjects = [
     amount: 30000,
     id: '2',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
     be a part of our mission.''',
   ),
   Project(
@@ -113,7 +113,7 @@ final List<Project> demoProjects = [
     amount: 100000,
     id: '3',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
     be a part of our mission.''',
   ),
   Project(
@@ -123,7 +123,7 @@ final List<Project> demoProjects = [
     amount: 150000,
     id: '4',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
     be a part of our mission.''',
   ),
   Project(
@@ -133,7 +133,7 @@ final List<Project> demoProjects = [
     amount: 50000,
     id: '5',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
     be a part of our mission.''',
   ),
   Project(
@@ -143,7 +143,7 @@ final List<Project> demoProjects = [
     amount: 30000,
     id: '6',
     description:
-        '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
+    '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and
     be a part of our mission.''',
   ),
 ];
@@ -313,7 +313,7 @@ var sponsors = [
     "id": 1,
     "name": "sponsor 1",
     "image":
-        "/media/%D8%AC%D8%A7%D9%85%D8%B9_%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D9%84%D9%8A.jpg"
+    "/media/%D8%AC%D8%A7%D9%85%D8%B9_%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D9%84%D9%8A.jpg"
   },
   {"id": 2, "name": "تجربة 2", "image": "/media/EER5oL9XYAECd5B.jpg"}
 ];
@@ -369,7 +369,7 @@ var userDonation5 = [
   }
 ];
 
-var case_by_category_id = [
+var caseByCategoryId = [
   {
     "case_id": {
       "id": 23,
@@ -393,3 +393,26 @@ var case_by_category_id = [
     "collected": 0
   }
 ];
+var userData =
+{
+  "id": 1,
+  "name": "Donor1",
+  "city_1": "manman123c",
+  "country_1": "manman123co",
+  "apartment_no_1": "manman",
+  "building_1": "manmb",
+  "area_1": "manman12ar",
+  "phone_1": "010",
+  "street_1": "manman12st",
+  "floor_1": "4",
+  "address_1": "None",
+  "city_2": null,
+  "country_2": null,
+  "apartment_no_2": null,
+  "building_2": null,
+  "area_2": null,
+  "phone_2": null,
+  "street_2": null,
+  "floor_2": null,
+  "address_2": ""
+};

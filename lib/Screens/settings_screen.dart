@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mersal/Screens/profile_sheet.dart';
 
 import '../widgets/drawer_menu.dart';
 import '../widgets/menu_tile.dart';
@@ -33,7 +34,7 @@ class Settings extends StatelessWidget {
               MenuTile(
                 image: 'Images/settings/profile.png',
                 title: 'Profile',
-                onTap: () {},
+                onTap: () => showProfileSheet(context),
               ),
               MenuTile(
                 image: 'Images/settings/lang.png',
