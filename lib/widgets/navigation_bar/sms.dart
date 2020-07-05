@@ -12,27 +12,26 @@ class SmsBody extends StatelessWidget {
           children: <Widget>[
             Card(
               margin: const EdgeInsets.all(0),
-              elevation: 3,
+              elevation: 1.5,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                leading: SizedBox(
-                    width: 40,
+              child: Row(children: <Widget>[
+                SizedBox(
+                    width: 70,
+                    height: 53,
                     child: Center(
                         child: Image.asset(
                       'Images/nav_icons/sms2.png',
                       width: 35,
                       height: 35,
                     ))),
-                title: Text(
+                Text(
                   ' 1 SMS costs 5LE',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 17),
                 ),
-              ),
+              ]),
             ),
-
             Spacer(flex: 3),
-
             SizedBox(
                 height: 50,
                 child: FittedBox(child: DonateButton(() {}, 'Donate NOW'))),

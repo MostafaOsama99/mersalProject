@@ -25,31 +25,31 @@ class NavTab extends StatelessWidget {
       fit: FlexFit.tight,
       flex: choose == id ? 5 : 4,
       child: FlatButton(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(0),
         onPressed: () => onTap(id),
         child: SizedBox(
-          height: 85, //to avoid vertical motion while switching
+          height: 80, //to avoid vertical motion while switching
           child: Column(
             children: [
               CircleAvatar(
                 backgroundColor: choose == id ? activeColor : inactiveColor,
-                radius: choose == id ? 25 : 19,
+                radius: choose == id ? 24 : 19,
                 child: Image.asset(
                   image,
-                  width: choose == id ? 35 : 25,
+                  width: choose == id ? 33 : 23,
                   height: 30,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 8),
+                padding: const EdgeInsets.only(top: 8),
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
                     style: choose == id
-                        ? TextStyle(color: Colors.teal, fontSize: 21)
-                        : TextStyle(color: Colors.grey, fontSize: 18),
+                        ? TextStyle(color: Colors.teal, fontSize: 19)
+                        : TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                 ),
               )

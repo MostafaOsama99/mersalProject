@@ -58,10 +58,12 @@ class _DonationSheetState extends State<DonationSheet> {
             SizedBox(
               width: 160,
               child: Divider(
-                height: 20,
+                height: 5,
                 color: Colors.grey,
               ),
             ),
+            SizedBox(height: 8),
+
             NavigationWidget(
               activeColor: Colors.teal,
               inactiveColor: Colors.grey,

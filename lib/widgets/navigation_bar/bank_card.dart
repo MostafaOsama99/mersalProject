@@ -21,24 +21,21 @@ class _BankCardBodyState extends State<BankCardBody> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              AmountField(amount),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            AmountField(amount),
 
-              Spacer(flex: 3),
-              SizedBox(
-                  height: 50,
-                  child:
-                      FittedBox(child: DonateButton(_saveForm, 'Donate NOW'))),
-              Spacer(),
-            ],
-          ),
+            Spacer(flex: 3),
+            SizedBox(
+                height: 50,
+                child:
+                    FittedBox(child: DonateButton(_saveForm, 'Donate NOW'))),
+            Spacer(),
+          ],
         ),
       ),
     );

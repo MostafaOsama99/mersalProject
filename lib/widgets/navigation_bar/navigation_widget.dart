@@ -53,6 +53,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
       child: Column(
         children: <Widget>[
           Row(children: tabs),
+          SizedBox(height: 5),
           widget.body[choice]
         ],
       ),
