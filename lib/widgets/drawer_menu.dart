@@ -96,7 +96,8 @@ class SocialMediaIcon extends StatelessWidget {
 
 //here where you make navigating
 navigate(final BuildContext context, final String route) {
-  //TODO: manage Navigator errors
+  //TODO: screens with back button -> pushName
+  //TODO: screens with drawer -> pushReplacementNamed
   Navigator.of(context).pop();
   Navigator.pushNamed(context, route);
   // stack overflow not working

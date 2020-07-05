@@ -49,11 +49,13 @@ class _NavigationWidgetState extends State<NavigationWidget> {
               onTap: _changeId,
               choose: choice,
             ));
-    return Column(
-      children: <Widget>[
-        Row(children: tabs),
-        widget.body[choice]
-      ],
+    return Expanded(
+      child: Column(
+        children: <Widget>[
+          Row(children: tabs),
+          widget.body[choice]
+        ],
+      ),
     );
   }
 }
