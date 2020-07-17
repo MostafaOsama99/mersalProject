@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 class HomeViewer extends StatelessWidget {
   final String title;
   final String route;
-  final List<Widget> view;
+  final int listLength;
   final double listHeight;
+  final Function(BuildContext context, int index) itemBuilder ;
 
-  const HomeViewer({this.title, this.route, this.view, this.listHeight});
+  const HomeViewer({this.title, this.route,@required this.listLength, this.listHeight,@required this.itemBuilder});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,8 @@ class HomeViewer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 16,left: 16,bottom: 10,top: 5),
+            padding:
+                const EdgeInsets.only(right: 16, left: 16, bottom: 10, top: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,9 +51,11 @@ class HomeViewer extends StatelessWidget {
           ),
           SizedBox(
             height: listHeight,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              children: view,
+              itemBuilder: itemBuilder,
+              itemCount: listLength,
+              //children: view,
             ),
           ),
         ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../Screens/donation_sheet.dart' show height;
+import '../../screens/donation_sheet.dart' show height;
 
 class AmountField extends StatefulWidget {
   double amount;

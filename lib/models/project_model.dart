@@ -6,9 +6,9 @@ import 'patient_model.dart';
 class Project extends Patient {
   final String title;
 
-  //TODO: make description required
+  //TOD: make description required
   const Project({
-    description,
+    @required description,
     @required this.title,
     @required collected,
     @required id,

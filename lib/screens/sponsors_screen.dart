@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mersal/widgets/drawer_menu.dart';
+import '../widgets/drawer_menu.dart';
 
 class Sponsors extends StatelessWidget {
   @override

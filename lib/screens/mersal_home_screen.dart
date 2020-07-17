@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
 
+import '../providers/projects.dart';
 import '../widgets/mersal_home_widgets/home_viewer.dart';
 import '../widgets/mersal_home_widgets/mersal_in_numbers_widget.dart';
 import '../widgets/mersal_home_widgets/project_card.dart';
@@ -12,6 +14,7 @@ import '../widgets/charitable_tile.dart';
 import '../demo_data.dart';
 
 class MersalHome extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -20,6 +23,14 @@ class MersalHome extends StatefulWidget {
 }
 
 class MesralHome extends State<MersalHome> {
+
+  @override
+  void initState() {
+   // Provider.of<Projects>(context,listen: false).postProjects();
+    Provider.of<Projects>(context,listen: false).fetchProjects();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,9 +44,9 @@ class MesralHome extends State<MersalHome> {
             centerTitle: true,
             actions: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(right:10),
+                padding: const EdgeInsets.only(right: 10),
                 child: Image.asset(
-                 'Images/mersal.jpg', // 'Images/Logo.png',
+                  'Images/mersal.jpg', // 'Images/Logo.png',
                 ),
               )
             ],
@@ -60,20 +71,20 @@ class MesralHome extends State<MersalHome> {
               title: 'Charitable activities',
               route: 'Charitable',
               listHeight: 150,
-              view: <Widget>[
-                FlatButton(
+              listLength: demoCharitableActivities.length,
+              itemBuilder: (BuildContext context, int index) {
+                return FlatButton(
                     padding: EdgeInsets.all(0),
                     onPressed: () {
-                      Navigator.pushNamed(context, TreatPatient.route, arguments: demoCases );
+                      Navigator.pushNamed(context, TreatPatient.route,
+                          arguments: demoCases);
                     },
                     /*Navigator.push(context, MaterialPageRoute(builder: (context){
                    return RateMyAppTestApp();
                  })); */
-                    child: CharitableTile(
-                      image: 'Images/projects/patientt.png',
-                      text: "Treat a patient",
-                    ))
-              ],
+                    child:
+                        CharitableTile(data: demoCharitableActivities[index]));
+              },
             ),
 
             SizedBox(height: 10),
@@ -83,7 +94,10 @@ class MesralHome extends State<MersalHome> {
               title: 'Mersal Projects',
               route: "Mersal Projects",
               listHeight: 300,
-              view: List.generate(demoProjects.length, (i)=> ProjectCard(demoProjects[i])),
+              listLength: Provider.of<Projects>(context).items.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ProjectCard(Provider.of<Projects>(context).items[index]) ;
+              }
             ),
 
             SizedBox(height: 10),
@@ -94,14 +108,15 @@ class MesralHome extends State<MersalHome> {
               title: 'Our Sponsors',
               route: 'Sponsors',
               listHeight: 120,
-              view: <Widget>[
-                Padding(
+              listLength: demoSponsors.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: SponsorsItem(
-                    image: "Images/smsm.jpg",
+                    image: demoSponsors[index],
                   ),
-                )
-              ],
+                );
+              },
             ),
             SizedBox(height: 10),
             Container(

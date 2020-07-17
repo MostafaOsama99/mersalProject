@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Sign_Up.dart';
+import 'sign_up.dart';
 
 class SignIn extends StatefulWidget {
   @override

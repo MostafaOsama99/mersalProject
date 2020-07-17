@@ -3,7 +3,7 @@ import 'package:mersal/Screens/item_details_sheet.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '../donate_button.dart';
-import '../../Screens/donation_sheet.dart';
+import '../../screens/donation_sheet.dart';
 import '../../models/project_model.dart';
 
 ///used to present mersal projects in home screen

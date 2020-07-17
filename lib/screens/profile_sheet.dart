@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Sign_Up.dart' show isEmail;
+import 'sign_up.dart' show isEmail;
 
 showProfileSheet(BuildContext context) {
   return showModalBottomSheet(

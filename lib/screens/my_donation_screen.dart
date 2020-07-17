@@ -15,6 +15,8 @@ import '../demo_data.dart';
 * */
 
 
+//TODO: chick final words for id dataType : int or String ?
+
 class MyDonation extends StatelessWidget {
 
   //this logic took some time to implement :)

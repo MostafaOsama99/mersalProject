@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/charitableActivities_model.dart';
 
 ///this widget used in charitable activities screen & home screen
 ///should we present icon (80x80) or an image ?
@@ -7,9 +8,9 @@ import 'package:flutter/material.dart';
 /// this widget should have a function on tap to navigate to required screen
 
 class CharitableTile extends StatelessWidget {
-  CharitableTile({this.image, this.text});
+  CharitableTile({this.data});
 
-  final String image, text;
+  final CharitableData data;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class CharitableTile extends StatelessWidget {
               Expanded(
                   child: Center(
                       child: Image.asset(
-                        image,
+                        data.image,
                         height: 80,
                         width: 80,
                       ))),
@@ -52,7 +53,7 @@ class CharitableTile extends StatelessWidget {
                 color: Color(0xffBDBDBD),
                 child: Center(
                   child: Text(
-                    text,
+                    data.text,
                     style:
                     TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
                     textAlign: TextAlign.center,

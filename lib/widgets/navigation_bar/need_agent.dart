@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mersal/widgets/donate_button.dart';
+import '../../widgets/donate_button.dart';
 import 'amount_field.dart';
 
 //TODO: if now address disable donate button

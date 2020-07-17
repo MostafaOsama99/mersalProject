@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-import '../Screens/donation_sheet.dart';
+import '../screens/donation_sheet.dart';
 import '../models/project_model.dart';
-import '../Screens/item_details_sheet.dart';
+import '../screens/item_details_sheet.dart';
 
 //card contains image and info about mersal project --16/6
 //TODO: Implement image.network

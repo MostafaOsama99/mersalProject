@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-import '../demo_data.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/projects.dart';
 import '../widgets/item_card.dart';
 
 //TODO: use dynamic data flow, remove demoData form here
-class Projects extends StatelessWidget {
+class ProjectsScreen extends StatelessWidget {
+  Future<void> _refreshProjects(BuildContext context) async {
+    await Provider.of<Projects>(context, listen: false).fetchProjects();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final projects = Provider.of<Projects>(context);
     // TODO: implement build
     return Scaffold(
         appBar: PreferredSize(
@@ -26,9 +33,15 @@ class Projects extends StatelessWidget {
             centerTitle: true,
           ),
         ),
-        body: ListView.builder(
-          itemBuilder: (context, i) => ItemCard(demoProjects[i]),
-          itemCount: demoProjects.length,
+        body: RefreshIndicator(
+          onRefresh: () => _refreshProjects(context),
+          child: Consumer<Projects>(
+            builder: (BuildContext context, projects, Widget child) =>
+                ListView.builder(
+                  itemBuilder: (context, i) => ItemCard(projects.items[i]),
+                  itemCount: projects.items.length,
+            ),
+          ),
         ));
   }
 }

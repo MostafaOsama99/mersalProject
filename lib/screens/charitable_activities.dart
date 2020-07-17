@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mersal/models/charitableActivities_model.dart';
 import 'package:mersal/widgets/drawer_menu.dart';
 
 import '../widgets/charitable_tile.dart';
@@ -31,9 +32,7 @@ class CharitableActivities extends StatelessWidget {
             itemCount: 4,
             itemBuilder: (context, i) {
               return CharitableTile(
-                image: 'Images/well.png',
-                text: 'well driling',
-              );
+                  data: CharitableData('Images/well.png', 'well driling'));
             },
           ),
         ],

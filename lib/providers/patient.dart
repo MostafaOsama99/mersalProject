@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
+import 'package:provider/provider.dart';
 
-class Patient {
-  final String imageUrl, description;
-  final int amount , id;
+class Patient  {
+  final String id, imageUrl, description;
+  final int amount;
   final int collected;
 
   //TODO: make description required
@@ -14,3 +15,5 @@ class Patient {
     @required this.imageUrl,
   });
 }
+
+
