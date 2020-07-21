@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/donate_button.dart';
+import 'package:mersal/widgets/alert_dialog.dart';
 
 class SmsBody extends StatelessWidget {
   @override
@@ -34,7 +35,9 @@ class SmsBody extends StatelessWidget {
             Spacer(flex: 3),
             SizedBox(
                 height: 50,
-                child: FittedBox(child: DonateButton(() {}, 'Donate NOW'))),
+                child: FittedBox(child: DonateButton(() {
+          confirmDialog(context);
+                }, 'Donate NOW'))),
             Spacer(),
           ],
         ),

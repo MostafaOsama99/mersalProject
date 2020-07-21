@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'sign_up.dart' show isEmail;
-
+import 'address_add_sheet.dart';
 showProfileSheet(BuildContext context) {
   return showModalBottomSheet(
       context: context,
@@ -10,54 +10,88 @@ showProfileSheet(BuildContext context) {
 }
 
 class ProfileSheet extends StatelessWidget {
+  final _formState = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-      child: ListView(
-        children: <Widget>[
-          TextField(
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-                labelText: 'Email', hintText: 'Example@email.com'),
-            onSubmitted: (email) {
-              //TODO:validate
-            },
-          ),
-          SizedBox(height: 15),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'name',
-              // hintText: ''
+      child: Form(
+        key: _formState,
+        child: ListView(
+          children: <Widget>[
+            TextFormField(
+              decoration: InputDecoration(hintText: 'Email'),
+              validator: (value) {
+                if (value.isEmpty)
+                  return "Please enter your E-mail";
+                else if (!isEmail(value)) return "Please enter a valid E-mail";
+                return null;
+              },
             ),
-          ),
-          SizedBox(height: 15),
-          TextFormField(
-            decoration: InputDecoration(
-                icon: Image.asset(
-                  'Images/settings/edit.png',
-                  width: 25,
-                  height: 25,
-                ),
-                labelText: 'Address 1'),
-          ),
-          SizedBox(height: 15),
-          TextFormField(
-            decoration: InputDecoration(
+            SizedBox(height: 15),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'name',
+                // hintText: ''
+              ),
+            ),
+            SizedBox(height: 15),
+            TextFormField(
+              readOnly: true,
+              decoration: InputDecoration(
                 icon: Image.asset(
                   'Images/settings/edit.png',
                   width: 25,
                   height: 25,
                 ),
                 labelText: 'Address 1',
-              hintText: 'hintText',
-              counterText: 'counter text',
-              helperText: 'helper text',
-              prefixText: 'prefix text',
-              suffixText: 'suffix text'
+                hintText: 'hintText',
+
+              ),
+
             ),
-          ),
-        ],
+            SizedBox(height: 15),
+            TextFormField(
+              readOnly: true,
+              decoration: InputDecoration(
+                icon: Image.asset(
+                  'Images/settings/edit.png',
+                  width: 25,
+                  height: 25,
+                ),
+                labelText: 'Address 2',
+                hintText: 'hintText',
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 25, right: 7),
+                  child: Container(
+                    width: 100,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.teal)),
+                    child: FlatButton(
+                      child: Text(
+                        "Save",
+                        style: TextStyle(color: Colors.teal),
+                      ),
+                      onPressed: () {
+                        _formState.currentState.validate();
+                        ackAlert(context);
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
