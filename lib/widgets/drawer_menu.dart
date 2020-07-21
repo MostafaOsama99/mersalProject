@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'menu_tile.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -56,9 +56,18 @@ class DrawerMenu extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      SocialMediaIcon(icon: 'Images/drawer/facebook.png'),
-                      SocialMediaIcon(icon: 'Images/drawer/insta.png'),
-                      SocialMediaIcon(icon: 'Images/drawer/youtube.png'),
+                      SocialMediaIcon(icon: 'Images/drawer/facebook.png',onTap: (){
+
+                       _launchURL('https://www.facebook.com/Mersalfoundation');
+                      },),
+                      SocialMediaIcon(icon: 'Images/drawer/insta.png',onTap: (){
+                        _launchURL('https://www.instagram.com/mersalcharity');
+                      },),
+                      SocialMediaIcon(icon: 'Images/drawer/youtube.png',
+                      onTap: (){
+                        _launchURL('https://www.youtube.com/channel/UC30Ek5Wl1us6LD6BLkegsHQ');
+                      },
+                      ),
                     ],
                   ),
                 ),
@@ -68,6 +77,15 @@ class DrawerMenu extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+_launchURL(String url) async {
+
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
 
