@@ -1,0 +1,96 @@
+Main URL = BASEURL/api/ENDPOINT
+--------------------------------------------------------------
+login_registration/
+
+GET:
+Required Data: (username, password)
+Return: ""
+
+POST:
+Required Data: (email, password, name, city, country)
+--------------------------------------------------------------
+donors/ ***no usage***
+
+GET:
+Required Data: ()
+Return: [{"id":1,"name":"Donor1","city_1":"manman123c","country_1":"manman123co","apartment_no_1":"manman","building_1":"manmb","area_1":"manman12ar","phone_1":"010","street_1":"manman12st","floor_1":"4","address_1":"None","city_2":null,"country_2":null,"apartment_no_2":null,"building_2":null,"area_2":null,"phone_2":null,"street_2":null,"floor_2":null,"address_2":""},{"id":2,"name":"Ahmed El-kady","city_1":"giza","country_1":"Egypt","apartment_no_1":"ap1","building_1":"b1","area_1":"a1","phone_1":"01025641555","street_1":"150 و - Hadabet alharam - giza","floor_1":"f1","address_1":"address 1","city_2":"c2","country_2":"co2","apartment_no_2":"ap2","building_2":"b2","area_2":"are2","phone_2":"ph2","street_2":"16x","floor_2":"f2","address_2":"address 2"}]
+--------------------------------------------------------------
+donor/<username>/ user data 
+
+GET:
+Required Data: ()
+Return: {"id":8,"name":"apitest_new1","city_1":"6 octobar","country_1":"giza","apartment_no_1":"16","building_1":null,"area_1":null,"phone_1":null,"street_1":null,"floor_1":null,"address_1":null,"city_2":null,"country_2":null,"apartment_no_2":null,"building_2":null,"area_2":null,"phone_2":null,"street_2":null,"floor_2":null,"address_2":null}
+
+PUT:
+Required Data: ('name', 'city_1', 'country_1', 'apartment_no_1', 'building_1', 'area_1', 'phone_1', 'street_1', 'floor_1', 'address_1', 'city_2', 'country_2', 'apartment_no_2', 'building_2', 'area_2', 'phone_2', 'street_2', 'floor_2', 'address_2')
+Return: {"id":8,"name":"apitest_new","city_1":"6 octobar","country_1":"giza","apartment_no_1":"16","building_1":null,"area_1":null,"phone_1":null,"street_1":null,"floor_1":null,"address_1":null,"city_2":null,"country_2":null,"apartment_no_2":null,"building_2":null,"area_2":null,"phone_2":null,"street_2":null,"floor_2":null,"address_2":null}
+--------------------------------------------------------------
+slider_images/
+
+GET:
+Required Data:()
+Return: [{"id":1,"name":"test1","image":"/media/1.jpg"},{"id":3,"name":"تجربة1","image":"/media/Kairo_Ibn_Tulun_Moschee_BW_4.jpg"}]
+--------------------------------------------------------------
+sub_categories/ charitable activities
+
+GET:
+Required Data:()
+Return: [{"id":1,"english_name":"Sub1-1","arabic_name":"فرعي1-1","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_8gnAWow.png"},{"id":2,"english_name":"Sub-21","arabic_name":"فرعي-21","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_XZqvGoV.png"},{"id":3,"english_name":"main12","arabic_name":"اساسي12","main_category":{"id":2,"english_name":"Main2","arabic_name":"اساسي 2","image":"/media/img/Categories/category_wt3md91.png"},"image":"/media/img/Categories/category_DngK3T9.png"},{"id":5,"english_name":"sub 1-1","arabic_name":"فرعي 1-1","main_category":{"id":10,"english_name":"cat1","arabic_name":"قسم 1","image":"/media/img/Categories/category.png"},"image":"/media/img/Categories/category.png"},{"id":6,"english_name":"sub12","arabic_name":"فرعي12","main_category":{"id":6,"english_name":"main test2","arabic_name":"اساسي تجربة 1","image":"/media/img/Categories/4.PNG"},"image":"/media/img/Categories/category.png"}]
+--------------------------------------------------------------
+projects/
+
+GET:
+Required Data:()
+Return: [{"project_id":{"id":25,"amount":564,"description":"None","is_urgent":true},"name":"project 1","collected":0},{"project_id":{"id":26,"amount":95684,"description":"None","is_urgent":false},"name":"Project 2","collected":0}]
+--------------------------------------------------------------
+urgent_projects/ ***no usage***
+
+GET:
+Required Data:()
+Return: [{"project_id":{"id":25,"amount":564,"description":"None","is_urgent":true},"name":"project 1","collected":0}]
+--------------------------------------------------------------
+our_sponsors/
+
+GET:
+Required Data:()
+Return: [{"id":1,"name":"sponsor 1","image":"/media/%D8%AC%D8%A7%D9%85%D8%B9_%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D9%84%D9%8A.jpg"},{"id":2,"name":"تجربة 2","image":"/media/EER5oL9XYAECd5B.jpg"}]
+--------------------------------------------------------------
+mersal_numbers/
+
+GET:
+Required Data:()
+Return: {"donors":7,"projects":2,"donations":3}
+--------------------------------------------------------------
+cases/
+
+GET:
+Required Data:()
+Return: [{"case_id":{"id":23,"amount":10000,"description":"None","is_urgent":false},"code":"GZNGGMJX","sub_category":{"id":1,"english_name":"Sub1-1","arabic_name":"فرعي1-1","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_8gnAWow.png"},"collected":0}]
+--------------------------------------------------------------
+urgent_cases/
+
+GET:
+Required Data:()
+Return: [{"case_id":{"id":33,"amount":6000,"description":"None","is_urgent":true},"code":"a34ec6faab895","sub_category":{"id":2,"english_name":"Sub-21","arabic_name":"فرعي-21","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_XZqvGoV.png"},"collected":0}]
+--------------------------------------------------------------
+donations/ ***no usage***
+
+GET:
+Required Data:()
+Return: [{"id":3,"donor":{"id":2,"name":"Ahmed El-kady","city_1":"giza","country_1":"Egypt","apartment_no_1":"ap1","building_1":"b1","area_1":"a1","phone_1":"01025641555","street_1":"150 و - Hadabet alharam - giza","floor_1":"f1","address_1":"address 1","city_2":"c2","country_2":"co2","apartment_no_2":"ap2","building_2":"b2","area_2":"are2","phone_2":"ph2","street_2":"16x","floor_2":"f2","address_2":"address 2"},"contribution":{"id":23,"amount":10000,"description":"None","is_urgent":false},"assigned_agent":{"id":2,"user":{"username":"agent2","password":"pbkdf2_sha256$150000$MQyGcNBt4WEO$FtF/K4NFw7+qMrJR+iVCsXcfOivKeb+be+QmzrBYoEg="},"phone":"011","image":"/media/img/agents/avatar_A2Zt40f.jpg","join_date":"2020-03-21"},"amount":600,"address_no":"1","charitable_activity":{"id":1,"english_name":"Sub1-1","arabic_name":"فرعي1-1","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_8gnAWow.png"},"date":"2020-03-23","collected":false}]
+
+POST:
+Required Data: (donor, contribution, amount, address_no, charitable_activity)
+--------------------------------------------------------------
+donations/<username>/
+
+GET:
+Required Data:()
+Return: [{"id":7,"donor":{"id":8,"name":"apitest_new1","city_1":"6 octobar","country_1":"giza","apartment_no_1":"16","building_1":null,"area_1":null,"phone_1":null,"street_1":null,"floor_1":null,"address_1":null,"city_2":null,"country_2":null,"apartment_no_2":null,"building_2":null,"area_2":null,"phone_2":null,"street_2":null,"floor_2":null,"address_2":null},"contribution":{"id":25,"amount":564,"description":"None","is_urgent":true},"assigned_agent":null,"amount":300,"address_no":"1","charitable_activity":{"id":2,"english_name":"Sub-21","arabic_name":"فرعي-21","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_XZqvGoV.png"},"date":"2020-03-29","collected":true}]
+--------------------------------------------------------------
+case_by_category/<id>/     charitable activities
+
+GET:
+Required Data:()
+Return: [{"case_id":{"id":23,"amount":10000,"description":"None","is_urgent":false},"code":"GZNGGMJX","sub_category":{"id":1,"english_name":"Sub1-1","arabic_name":"فرعي1-1","main_category":{"id":1,"english_name":"Main1","arabic_name":"اساسي 1","image":"/media/img/Categories/category_uzMtn80.png"},"image":"/media/img/Categories/category_8gnAWow.png"},"collected":0}]
+--------------------------------------------------------------

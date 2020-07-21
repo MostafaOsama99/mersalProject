@@ -36,9 +36,9 @@ class Sponsors extends StatelessWidget {
 }
 
 class SponsorsItem extends StatelessWidget {
-  SponsorsItem({this.image});
-
   final String image;
+
+  const SponsorsItem({this.image});
 
   @override
   Widget build(BuildContext context) {

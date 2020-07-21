@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mersal/models/charitableActivities_model.dart';
-import 'package:mersal/widgets/drawer_menu.dart';
 
-import '../widgets/charitable_tile.dart';
+import '../models/charitableActivities_model.dart';
+import '../widgets/drawer_menu.dart';
+import '../widgets/activity_tile.dart';
 
 class CharitableActivities extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50),
@@ -17,25 +16,34 @@ class CharitableActivities extends StatelessWidget {
         ),
       ),
       drawer: DrawerMenu(),
-      body: Column(
-        children: <Widget>[
-          GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+      body: FutureBuilder(
+        future: charitableList == null ? fetchCharitableActivities() : null,
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
 
-              ///child aspect ratio
-              childAspectRatio: 130 / 150,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-            shrinkWrap: true,
-            itemCount: 4,
-            itemBuilder: (context, i) {
-              return CharitableTile(
-                  data: CharitableData('Images/well.png', 'well driling'));
-            },
-          ),
-        ],
+          if (snapshot.connectionState == ConnectionState.waiting)
+            return Center(child: CircularProgressIndicator());
+
+          else if (snapshot.error != null) {
+          print(snapshot.error);
+            return Center(child: Text('an Error occurred '));
+          }
+          else
+            return GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+
+                //child aspect ratio
+                childAspectRatio: 13 / 15,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              shrinkWrap: true,
+              itemCount: charitableList.length,
+              itemBuilder: (context, i) {
+                return ActivityTile(data: charitableList[i]);
+              },
+            );
+        },
       ),
     );
   }

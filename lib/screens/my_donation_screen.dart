@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/patient_model.dart'; //BTW "../" means go to the previous route(path)
+import '../models/activity_model.dart'; //BTW "../" means go to the previous route(path)
 import '../widgets/donation_card.dart';
 import '../demo_data.dart';
 
@@ -22,7 +22,7 @@ class MyDonation extends StatelessWidget {
   //this logic took some time to implement :)
   //سمي الله علشان تشتغل :)
   //TODO: patient should be generic mersal case
-  final List<Patient> _userCases = List.generate(userDonation.length, (index){
+  final List<Activity> _userCases = List.generate(userDonation.length, (index){
     return demoCases.firstWhere((item)=> item.id == userDonation[index].caseId );
   });
 

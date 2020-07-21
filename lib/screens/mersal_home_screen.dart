@@ -3,37 +3,32 @@ import 'package:provider/provider.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'sponsors_screen.dart';
+import '../demo_data.dart';
+import '../models/charitableActivities_model.dart';
 import '../providers/projects.dart';
 import '../widgets/mersal_home_widgets/home_viewer.dart';
 import '../widgets/mersal_home_widgets/mersal_in_numbers_widget.dart';
 import '../widgets/mersal_home_widgets/project_card.dart';
-import 'treat_patient_screen.dart';
 import '../widgets/drawer_menu.dart';
-import 'sponsors_screen.dart';
-import '../widgets/charitable_tile.dart';
-import '../demo_data.dart';
+import '../widgets/activity_tile.dart';
 
 class MersalHome extends StatefulWidget {
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return MesralHome();
-  }
+  _MersalHomeState createState() => _MersalHomeState();
 }
 
-class MesralHome extends State<MersalHome> {
-
+class _MersalHomeState extends State<MersalHome> {
   @override
   void initState() {
-   // Provider.of<Projects>(context,listen: false).postProjects();
     Provider.of<Projects>(context,listen: false).fetchProjects();
+    fetchCharitableActivities();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         backgroundColor: Color(0xffDFDFDF),
         appBar: PreferredSize(
@@ -64,26 +59,15 @@ class MesralHome extends State<MersalHome> {
                 )),
             SizedBox(height: 10),
 
-            //TODO: you may refactor this to pass data to see more button
+            //you may refactor this to pass data to see more button
             /// Charitable activities
-            /// should have a list of CharitableTile
             HomeViewer(
               title: 'Charitable activities',
               route: 'Charitable',
               listHeight: 150,
-              listLength: demoCharitableActivities.length,
+              listLength: charitableList.length,
               itemBuilder: (BuildContext context, int index) {
-                return FlatButton(
-                    padding: EdgeInsets.all(0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, TreatPatient.route,
-                          arguments: demoCases);
-                    },
-                    /*Navigator.push(context, MaterialPageRoute(builder: (context){
-                   return RateMyAppTestApp();
-                 })); */
-                    child:
-                        CharitableTile(data: demoCharitableActivities[index]));
+                return ActivityTile(data: charitableList[index]);
               },
             ),
 

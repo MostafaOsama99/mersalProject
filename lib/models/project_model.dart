@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
-import 'patient_model.dart';
+import 'activity_model.dart';
 
 ///mersal projects data model
 ///final model
-class Project extends Patient {
+class Project extends Activity {
   final String title;
 
   //TOD: make description required

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/patient_model.dart';
+import '../models/activity_model.dart';
 import '../widgets/item_card.dart';
 import 'package:mersal/demo_data.dart';
 
@@ -12,7 +12,7 @@ class TreatPatient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Patient> patientList = isUrgent ? demoUrgentCases : ModalRoute.of(context).settings.arguments ;
+    final List<Activity> patientList = isUrgent ? demoUrgentCases : ModalRoute.of(context).settings.arguments ;
 
     // TODO: data getter / provider
     return Scaffold(

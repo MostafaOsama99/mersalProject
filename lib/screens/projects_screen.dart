@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../providers/projects.dart';
 import '../widgets/item_card.dart';
 
-//TODO: use dynamic data flow, remove demoData form here
 class ProjectsScreen extends StatelessWidget {
   Future<void> _refreshProjects(BuildContext context) async {
     await Provider.of<Projects>(context, listen: false).fetchProjects();
@@ -12,8 +11,6 @@ class ProjectsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final projects = Provider.of<Projects>(context);
-    // TODO: implement build
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(50),

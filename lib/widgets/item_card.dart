@@ -14,7 +14,7 @@ class ItemCard extends StatelessWidget {
    final item;
    const ItemCard(this.item);
 
-  final double height = 160; //widget height
+  final double height = 140; //widget height
 
   @override
   Widget build(BuildContext context) {

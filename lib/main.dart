@@ -6,7 +6,7 @@ import 'providers/projects.dart' as prov;
 import 'screens/mersal_home_screen.dart';
 import 'screens/sign_up.dart';
 import 'screens/login.dart';
-import 'screens/donation_sheet.dart';
+import 'screens/charitable_activity_screen.dart';
 import 'screens/sponsors_screen.dart';
 import 'screens/about_mersal.dart';
 import 'screens/charitable_activities.dart';
@@ -53,7 +53,8 @@ void main() => runApp(Platform.isIOS
             //  'Donation': (context) => DonationSheet(),
             'Mersal Home': (context) => MersalHome(),
             'Sign Up': (context) => SignUp(),
-            'Sign In': (context) => SignIn()
+            'Sign In': (context) => SignIn(),
+            ActivityScreen.route: (context) => ActivityScreen()
           },
         ),
     ));

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-import '../models/patient_model.dart';
+import '../models/activity_model.dart';
 import '../models/user_donation_model.dart';
 
 /*
@@ -20,7 +20,7 @@ import '../models/user_donation_model.dart';
 
 
 class DonationCard extends StatelessWidget {
-  final Patient _case; //this should be mersal project case instead of patients only
+  final Activity _case; //this should be mersal project case instead of patients only
   final UserDonation userDonation;
   const DonationCard(this._case, this.userDonation);
   final double height = 160; //widget height
