@@ -161,9 +161,9 @@ var sponsors = [
     "id": 1,
     "name": "sponsor 1",
     "image":
-        "/media/%D8%AC%D8%A7%D9%85%D8%B9_%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D9%84%D9%8A.jpg"
+        "Images/smsm.jpg"
   },
-  {"id": 2, "name": "تجربة 2", "image": "/media/EER5oL9XYAECd5B.jpg"}
+  {"id": 2, "name": "تجربة 2", "image": "Images/smsm.jpg"}
 ];
 
 var userDonations = [

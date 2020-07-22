@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
-
+import 'package:mersal/models/sponsors_model.dart';
 import 'sponsors_screen.dart';
 import '../demo_data.dart';
 import '../models/charitableActivities_model.dart';
@@ -12,7 +12,7 @@ import '../widgets/mersal_home_widgets/mersal_in_numbers_widget.dart';
 import '../widgets/mersal_home_widgets/project_card.dart';
 import '../widgets/drawer_menu.dart';
 import '../widgets/activity_tile.dart';
-
+import 'package:mersal/models/sponsors_model.dart';
 class MersalHome extends StatefulWidget {
 
   @override
@@ -24,6 +24,7 @@ class _MersalHomeState extends State<MersalHome> {
   void initState() {
     Provider.of<Projects>(context,listen: false).fetchProjects();
     fetchCharitableActivities();
+    fetchSponsorsData();
     super.initState();
   }
 
@@ -92,12 +93,12 @@ class _MersalHomeState extends State<MersalHome> {
               title: 'Our Sponsors',
               route: 'Sponsors',
               listHeight: 120,
-              listLength: demoSponsors.length,
+              listLength: sponsorList.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: SponsorsItem(
-                    image: demoSponsors[index],
+                    image: sponsorList[index].imageUrl,
                   ),
                 );
               },

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mersal/models/charitableActivities_model.dart';
-import 'package:mersal/screens/activity_screen.dart';
+import '../models/charitableActivities_model.dart';
+import '../screens/activity_screen.dart';
 
+import 'package:url_launcher/url_launcher.dart';
 import 'menu_tile.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -9,8 +10,7 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Drawer(
-      child: SafeArea(
-        //to avoid notifications bar
+      child: SafeArea( //to avoid notifications bar
         child: Column(
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -59,13 +59,22 @@ class DrawerMenu extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
+                  padding: const EdgeInsets.only(bottom:8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      SocialMediaIcon(icon: 'Images/drawer/facebook.png'),
-                      SocialMediaIcon(icon: 'Images/drawer/insta.png'),
-                      SocialMediaIcon(icon: 'Images/drawer/youtube.png'),
+                      SocialMediaIcon(icon: 'Images/drawer/facebook.png',onTap: (){
+
+                       _launchURL('https://www.facebook.com/Mersalfoundation');
+                      },),
+                      SocialMediaIcon(icon: 'Images/drawer/insta.png',onTap: (){
+                        _launchURL('https://www.instagram.com/mersalcharity');
+                      },),
+                      SocialMediaIcon(icon: 'Images/drawer/youtube.png',
+                      onTap: (){
+                        _launchURL('https://www.youtube.com/channel/UC30Ek5Wl1us6LD6BLkegsHQ');
+                      },
+                      ),
                     ],
                   ),
                 ),
@@ -75,6 +84,15 @@ class DrawerMenu extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+_launchURL(String url) async {
+
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
 
