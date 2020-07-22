@@ -10,12 +10,15 @@ class CharitableData {
   const CharitableData(this.image, this.title, this.id);
 }
 
-List<CharitableData> charitableList = [];
+List<CharitableData> charitableList ;
 
 Future<void> fetchCharitableActivities() async {
 
   const url = 'https://shop-app-90098.firebaseio.com/mersal/subCategories.json';
 
+  //this is so emportant to empty the old list befor fetching
+  //the new one. don't remove it
+  charitableList = [];
   final response = await http.get(url);
   if (response.statusCode >= 400)
     throw (HttpException('could\'t load Charitable Activities'));
