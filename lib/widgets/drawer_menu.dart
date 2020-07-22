@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mersal/models/charitableActivities_model.dart';
+import 'package:mersal/screens/activity_screen.dart';
 
 import 'menu_tile.dart';
 
@@ -7,7 +9,8 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Drawer(
-      child: SafeArea( //to avoid notifications bar
+      child: SafeArea(
+        //to avoid notifications bar
         child: Column(
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -19,7 +22,11 @@ class DrawerMenu extends StatelessWidget {
             MenuTile(
                 image: 'Images/drawer/urgent.png',
                 title: "Urgent cases",
-                onTap: () => navigate(context, "/treat_patient/urgent", )),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, ActivityScreen.route,
+                      arguments: CharitableData(null, 'Urgent cases', -1));
+                }),
             ////////////////// mfesh Urgent
             MenuTile(
                 image: 'Images/drawer/chartiable.png',
@@ -52,7 +59,7 @@ class DrawerMenu extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom:8.0),
+                  padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
@@ -74,7 +81,6 @@ class DrawerMenu extends StatelessWidget {
 class SocialMediaIcon extends StatelessWidget {
   final String icon;
   final Function onTap;
-
 
   const SocialMediaIcon({this.icon, this.onTap});
 
