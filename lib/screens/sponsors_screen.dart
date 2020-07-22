@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/drawer_menu.dart';
-
+import 'package:mersal/models/sponsors_model.dart';
 class Sponsors extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,10 @@ class Sponsors extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         shrinkWrap: true,
-        itemCount: sponsorsList.length,
+        itemCount: sponsorList.length,
         itemBuilder: (context, i) {
           return SponsorsItem(
-            image: sponsorsList[i],
+            image: sponsorList[i].imageUrl,
           );
         },
       ),
@@ -73,10 +73,3 @@ class SponsorsItem extends StatelessWidget {
 }
 
 //just demo data
-List<String> sponsorsList = [
-  "Images/smsm.jpg",
-  "Images/smsm.jpg",
-  "Images/smsm.jpg",
-  "Images/smsm.jpg",
-  "Images/smsm.jpg"
-];

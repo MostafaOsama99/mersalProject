@@ -1,4 +1,6 @@
 import 'package:http/http.dart' as http;
+import 'package:mersal/demo_data.dart';
+import 'package:mersal/models/sponsors_model.dart';
 import 'dart:convert';
 
 import 'http_exception.dart';
@@ -10,10 +12,10 @@ class CharitableData {
   const CharitableData(this.image, this.title, this.id);
 }
 
-List<CharitableData> charitableList ;
+List<CharitableData> charitableList = [];
 
 Future<void> fetchCharitableActivities() async {
-  charitableList = [];
+
   const url = 'https://shop-app-90098.firebaseio.com/mersal/subCategories.json';
 
   final response = await http.get(url);
@@ -21,7 +23,7 @@ Future<void> fetchCharitableActivities() async {
     throw (HttpException('could\'t load Charitable Activities'));
 
   final List body = json.decode(response.body) ;
-
+  await http.put('https://yaallah-a1736.firebaseio.com/our_sponsors.json',body:json.encode(sponsors) );
   body.forEach((element) {
     charitableList.add(CharitableData(
         element['image'], element['english_name'], element['id']));
@@ -32,7 +34,7 @@ Future<void> fetchCharitableActivities() async {
 
 
 
-
+// await http.put('https://yaallah-a1736.firebaseio.com/our_sponsors.json',body:json.encode(sponsors) );
 //  await http.put('https://shop-app-90098.firebaseio.com/mersal/case_by_category/10/.json',body: json.encode(tempCaseByCategoryId));
 //  await http.put('https://shop-app-90098.firebaseio.com/mersal/case_by_category/12/.json',body: json.encode(tempCaseByCategoryId));
 //  await http.put('https://shop-app-90098.firebaseio.com/mersal/case_by_category/11/.json',body: json.encode(tempCaseByCategoryId2));
