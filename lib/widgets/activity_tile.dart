@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mersal/screens/activity_screen.dart';
+import 'package:mersal/screens/charitable_activity_screen.dart';
 import '../models/charitableActivities_model.dart';
 
 ///this widget used in charitable activities screen & home screen

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mersal/widgets/new_address_sheet.dart';
 confirmDialog(BuildContext context) {
   return showDialog(
     context: context,
@@ -55,6 +57,31 @@ ackAlert(BuildContext context) {
             },
           ),
         ],
+      );
+    },
+  );
+}
+
+
+addressDialog(BuildContext context) {
+  return showGeneralDialog(
+    context: context,
+    barrierColor: Colors.black12.withOpacity(0.6), // background color
+    barrierDismissible: false, // should dialog be dismissed when tapped outside
+    barrierLabel: "Dialog", // label for barrier
+    transitionDuration: Duration(milliseconds: 400), // how long it takes to popup dialog after button click
+    pageBuilder: (_, __, ___) { // your widget implementation
+      return SizedBox.expand( // makes widget fullscreen
+        child: Padding(
+          padding: EdgeInsets.only(top: 50,bottom: 35),
+          child: Scaffold(
+            resizeToAvoidBottomPadding: false,
+            body: Padding(
+            padding: EdgeInsets.all(20),
+            child: CreateAddress()
+          ),
+          ),
+        )
       );
     },
   );

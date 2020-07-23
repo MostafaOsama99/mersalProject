@@ -62,7 +62,6 @@ const List<Activity> demoCases = [
   ),
 ];
 
-// *** no usage ***
 const List<Activity> demoUrgentCases = [
   Activity(
       id: 1,
@@ -166,7 +165,7 @@ var sponsors = [
   {"id": 2, "name": "تجربة 2", "image": "Images/smsm.jpg"}
 ];
 
-var userDonations = [
+var userDonation5 = [
   {
     "id": 7,
     "donor": {
@@ -213,7 +212,7 @@ var userDonations = [
       "image": "/media/img/Categories/category_XZqvGoV.png"
     },
     "date": "2020-03-29",
-    "collected": true //when collected becomes false ?
+    "collected": true
   }
 ];
 
@@ -239,6 +238,31 @@ var userData = {
   "floor_2": null,
   "address_2": ""
 };
+
+var charitableActivity = [
+  {
+    "case_id": {
+      "id": 23,
+      "amount": 10000,
+      "description": "None",
+      "is_urgent": false
+    },
+    "code": "GZNGGMJX",
+    "sub_category": {
+      "id": 1,
+      "english_name": "Sub1-1",
+      "arabic_name": "فرعي1-1",
+      "main_category": {
+        "id": 1,
+        "english_name": "Main1",
+        "arabic_name": "اساسي 1",
+        "image": "/media/img/Categories/category_uzMtn80.png"
+      },
+      "image": "/media/img/Categories/category_8gnAWow.png"
+    },
+    "collected": 0
+  }
+];
 
 var caseByCategoryId = [
   {
@@ -343,13 +367,34 @@ var projects = [
   }
 ];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var tempCaseByCategoryId = [
   {
     "case_id": {
       "id": 23,
       "amount": 10000,
-      "description":
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
       "is_urgent": false
     },
     "code": "GZNGGMJX",
@@ -367,12 +412,13 @@ var tempCaseByCategoryId = [
     },
     "collected": 5320
   },
+
+
   {
     "case_id": {
       "id": 24,
       "amount": 50000,
-      "description":
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
       "is_urgent": false
     },
     "code": "GZNGGMJX",
@@ -394,8 +440,7 @@ var tempCaseByCategoryId = [
     "case_id": {
       "id": 26,
       "amount": 2000,
-      "description":
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
       "is_urgent": false
     },
     "code": "GZNGGMJX",
@@ -416,35 +461,35 @@ var tempCaseByCategoryId = [
 ];
 
 var tempCaseByCategoryId2 = [
-//  {
-//    "case_id": {
-//      "id": 1,
-//      "amount": 18000,
-//      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
-//      "is_urgent": false
-//    },
-//    "code": "GZNGGMJX",
-//    "sub_category": {
-//      "id": 10,
-//      "english_name": "Sub1-1",
-//      "arabic_name": "فرعي1-1",
-//      "main_category": {
-//        "id": 1,
-//        "english_name": "Main1",
-//        "arabic_name": "اساسي 1",
-//        "image": "/media/img/Categories/category_uzMtn80.png"
-//      },
-//      "image": 'Images/projects/blanket.jpg'
-//    },
-//    "collected": 10000
-//  },
+  {
+    "case_id": {
+      "id": 1,
+      "amount": 18000,
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "is_urgent": false
+    },
+    "code": "GZNGGMJX",
+    "sub_category": {
+      "id": 10,
+      "english_name": "Sub1-1",
+      "arabic_name": "فرعي1-1",
+      "main_category": {
+        "id": 1,
+        "english_name": "Main1",
+        "arabic_name": "اساسي 1",
+        "image": "/media/img/Categories/category_uzMtn80.png"
+      },
+      "image": 'Images/projects/blanket.jpg'
+    },
+    "collected": 10000
+  },
+
 
   {
     "case_id": {
       "id": 2,
       "amount": 16000,
-      "description":
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
       "is_urgent": false
     },
     "code": "GZNGGMJX",
@@ -466,8 +511,7 @@ var tempCaseByCategoryId2 = [
     "case_id": {
       "id": 3,
       "amount": 15000,
-      "description":
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
       "is_urgent": false
     },
     "code": "GZNGGMJX",
@@ -485,34 +529,33 @@ var tempCaseByCategoryId2 = [
     },
     "collected": 12500
   },
-//  {
-//    "case_id": {
-//      "id": 4,
-//      "amount": 15000,
-//      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
-//      "is_urgent": false
-//    },
-//    "code": "GZNGGMJX",
-//    "sub_category": {
-//      "id": 10,
-//      "english_name": "Sub1-1",
-//      "arabic_name": "فرعي1-1",
-//      "main_category": {
-//        "id": 1,
-//        "english_name": "Main1",
-//        "arabic_name": "اساسي 1",
-//        "image": "/media/img/Categories/category_uzMtn80.png"
-//      },
-//      "image": 'Images/projects/blanket.jpg'
-//    },
-//    "collected":  17000
-//  },
+  {
+    "case_id": {
+      "id": 4,
+      "amount": 15000,
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "is_urgent": false
+    },
+    "code": "GZNGGMJX",
+    "sub_category": {
+      "id": 10,
+      "english_name": "Sub1-1",
+      "arabic_name": "فرعي1-1",
+      "main_category": {
+        "id": 1,
+        "english_name": "Main1",
+        "arabic_name": "اساسي 1",
+        "image": "/media/img/Categories/category_uzMtn80.png"
+      },
+      "image": 'Images/projects/blanket.jpg'
+    },
+    "collected":  17000
+  },
   {
     "case_id": {
       "id": 5,
       "amount": 8000,
-      "description":
-          '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
+      "description": '''we are charity, non-profit, fundraising, NGO organizations, Our activities are token, Our activities help all the patients around the glob so help us and be a part of our mission.''',
       "is_urgent": false
     },
     "code": "GZNGGMJX",

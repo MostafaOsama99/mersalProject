@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'http_exception.dart';
 
+
 class Activity {
   final String imageUrl, description;
   final int amount, id;
@@ -29,17 +30,13 @@ Map<int, List<Activity>> activitiesData = {};
 * */
 
 Future<void> fetchActivity(int id) async {
-  //to update only once
-  // if (activitiesData[id] != null) return;
 
-  // id == -1 => urgent cases
-  final url = id == -1
-      ? 'https://shop-app-90098.firebaseio.com/mersal/urgent_cases.json'
-      : 'https://shop-app-90098.firebaseio.com/mersal/case_by_category/$id/.json';
+  if (activitiesData[id] != null) return;
+  final url = 'https://shop-app-90098.firebaseio.com/mersal/case_by_category/$id/.json';
 
   final response = await http.get(url);
-  if (response.statusCode >= 400)
-    throw (HttpException('could\'t load activity, id: $id'));
+  if (response.statusCode >= 400) throw(HttpException(
+      'could\'t load activity, id: $id'));
 
   final List<dynamic> body = json.decode(response.body);
   List<Activity> temp = [];

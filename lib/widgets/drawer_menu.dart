@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/charitableActivities_model.dart';
-import '../screens/activity_screen.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 import 'menu_tile.dart';
 
@@ -22,11 +19,7 @@ class DrawerMenu extends StatelessWidget {
             MenuTile(
                 image: 'Images/drawer/urgent.png',
                 title: "Urgent cases",
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, ActivityScreen.route,
-                      arguments: CharitableData(null, 'Urgent cases', -1));
-                }),
+                onTap: () => navigate(context, "/treat_patient/urgent", )),
             ////////////////// mfesh Urgent
             MenuTile(
                 image: 'Images/drawer/chartiable.png',
@@ -99,6 +92,7 @@ _launchURL(String url) async {
 class SocialMediaIcon extends StatelessWidget {
   final String icon;
   final Function onTap;
+
 
   const SocialMediaIcon({this.icon, this.onTap});
 
